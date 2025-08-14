@@ -1,0 +1,1 @@
+export function Badge({ className='', children }){ return <span className={`badge bg-brand text-white ${className}`}>{children}</span> }
