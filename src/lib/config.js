@@ -33,8 +33,8 @@ export const BRAND = {
     ],
     memberships: [
       { name: "Básica", price: 149, features: ["Dieta mensual sin consulta", "Recetario económico del mes", "Acceso a comunidad"], ctaHref: "https://patreon.com/LaNutriTia"},
-      { name: "Pro", price: 349, features: ["Todo en Básica", "1 consulta online al mes", "Ajustes quincenales", "Prioridad en mensajes"], ctaHref: "https://patreon.com/LaNutriTia"},
-      { name: "VIP", price: 699, features: ["Todo en Pro", "2 consultas al mes", "Plan de entrenamiento", "Revisión semanal"]}
+      { name: "Pro", price: 449, features: ["Todo en Básica", "1 consulta online al mes", "Ajustes quincenales", "Prioridad en mensajes"], ctaHref: "https://patreon.com/LaNutriTia"},
+      { name: "VIP", price: 799, features: ["Todo en Pro", "2 consultas online al mes", "Plan de entrenamiento", "Revisión semanal"]}
     ]
   },
   instagramEmbeds: [
