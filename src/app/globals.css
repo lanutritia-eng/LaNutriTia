@@ -40,5 +40,9 @@ footer a:hover { text-decoration: underline; }
 }
 
 @layer base {
-  :root { --brand: 160 84% 39%; }
+  :root { --brand: 25 60% 40%;  /* café */
+    --brand-secondary: 0 0% 50%; /* gris */
+    --brand-accent: 30 100% 50%; /* naranja */
+  }
+}
 }
