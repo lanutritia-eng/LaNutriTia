@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --radius: 1rem;
-}
-
 body {
   @apply bg-gradient-to-b from-[hsl(var(--surface))] via-[hsl(var(--surface))] to-[hsl(var(--surface))] text-ink;
 }
@@ -41,6 +37,7 @@ footer a:hover { text-decoration: underline; }
 
 @layer base {
   :root {
+    --radius: 1rem;
     --brand: 24 35% 36%;    /* café principal */
     --brand-2: 30 100% 52%; /* naranja acento */
     --surface: 30 30% 96%;  /* nácar fondo suave */
