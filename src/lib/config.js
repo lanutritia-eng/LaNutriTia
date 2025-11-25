@@ -26,14 +26,10 @@ export const BRAND = {
       { name: "Consulta Online", price: 550, desc: "Videollamada 45 min + plan personalizado" },
       { name: "Consulta Presencial", price: 650, desc: "Consulta en clínica 45 min + plan personalizado" }
     ],
-    packs: [
-      { name: "Paquete Online (4 consultas)", price: 1650, desc: "Ahorra en tus consultas virtuales" },
-      { name: "Paquete Presencial (4 consultas)", price: 1950, desc: "Acompañamiento en clínica" }
-    ],
     memberships: [
-      { name: "Básica", price: 299, features: ["Dieta mensual sin consulta", "Recetario económico del mes", "Acceso a comunidad"], ctaHref: "https://patreon.com/LaNutriTia"},
-      { name: "Pro", price: 499, features: ["Todo en Básica", "1 consulta online al mes", "Ajustes quincenales", "Prioridad en mensajes"], ctaHref: "https://patreon.com/LaNutriTia"},
-      { name: "VIP", price: 799, features: ["Todo en Pro", "2 consultas online al mes", "Plan de entrenamiento", "Revisión semanal"], ctaHref: "https://marcogalindo.setmore.com/"}
+      { name: "Básica", price: 299, features: ["Dieta mensual sin consulta", "Recetario económico del mes", "Acceso a comunidad"], ctaHref: "https://patreon.com/LaNutriTia" },
+      { name: "Pro", price: 499, features: ["Todo en Básica", "1 consulta online al mes", "Ajustes quincenales", "Prioridad en mensajes"], ctaHref: "https://patreon.com/LaNutriTia" },
+      { name: "VIP", price: 799, features: ["Todo en Pro", "2 consultas online al mes", "Plan de entrenamiento", "Revisión semanal"], ctaHref: "https://marcogalindo.setmore.com/" }
     ]
   },
   instagramEmbeds: [
