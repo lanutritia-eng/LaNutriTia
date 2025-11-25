@@ -35,7 +35,7 @@ function Feature({ Icon, title, desc }){
     <div className="card">
       <CardHeader>
         <div className="flex items-center gap-3">
-          <div className="p-3 rounded-2xl bg-emerald-50"><Icon className="h-6 w-6 text-brand" /></div>
+          <div className="p-3 rounded-2xl bg-[hsl(45,40%,92%)]"><Icon className="h-6 w-6 text-brand" /></div>
           <CardTitle className="text-lg">{title}</CardTitle>
         </div>
       </CardHeader>
@@ -113,8 +113,8 @@ export default function Page(){
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="absolute -top-24 -right-24 bg-emerald-200/40 h-72 w-72 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 bg-emerald-300/30 h-72 w-72 rounded-full blur-3xl" />
+        <div className="absolute -top-24 -right-24 bg-[hsl(75,35%,80%)]/50 h-72 w-72 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 bg-[hsl(45,40%,78%)]/55 h-72 w-72 rounded-full blur-3xl" />
         <div className="container py-16 md:py-28 grid md:grid-cols-2 gap-10 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 rounded-full bg-white border px-3 py-1 text-xs text-brand">
@@ -132,7 +132,7 @@ export default function Page(){
             </div>
             <div className="mt-6 flex items-center gap-6">
               <div className="flex -space-x-3">
-                {[...Array(5)].map((_,i)=> (<div key={i} className="h-10 w-10 rounded-full ring-2 ring-white bg-emerald-200" />))}
+                {[...Array(5)].map((_,i)=> (<div key={i} className="h-10 w-10 rounded-full ring-2 ring-white bg-[hsl(75,35%,82%)]" />))}
               </div>
               <p className="text-sm text-slate-600">+2,000 pacientes acompañados | 4.9/5 satisfacción</p>
             </div>
@@ -140,11 +140,11 @@ export default function Page(){
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="relative">
             <div className="aspect-[4/5] rounded-3xl bg-white shadow-2xl p-4 border">
-              <div className="h-full w-full rounded-2xl bg-gradient-to-br from-emerald-100 to-emerald-200 grid place-items-center text-emerald-900">
+              <div className="h-full w-full rounded-2xl bg-gradient-to-br from-[hsl(45,45%,90%)] via-[hsl(50,35%,85%)] to-[hsl(75,30%,82%)] grid place-items-center text-[#464334]">
                 <div className="text-center px-6">
                   <p className="text-sm uppercase tracking-widest">La Nutri Tía</p>
                   <h3 className="text-2xl font-bold mt-1">Menos regaños, más resultados</h3>
-                  <p className="text-sm text-emerald-800/80 mt-2">Plan de 5 tiempos, esferas por color, recetas de la milpa y acompañamiento realista.</p>
+                  <p className="text-sm text-[#4f5635]/80 mt-2">Plan de 5 tiempos, esferas por color, recetas de la milpa y acompañamiento realista.</p>
                 </div>
               </div>
             </div>
@@ -436,10 +436,10 @@ export default function Page(){
             </div>
           </div>
         </div>
-        <div className="card border-emerald-200 bg-emerald-50 mt-6">
-          <CardContent className="p-6 text-sm text-emerald-950">
+        <div className="card border-[hsl(75,35%,78%)] bg-[hsl(45,40%,95%)] mt-6">
+          <CardContent className="p-6 text-sm text-[#3f3a2f]">
             <p className="font-semibold">Aviso importante</p>
-            <p className="text-emerald-900/80 mt-1">La información proporcionada no sustituye la valoración médica. Si presentas una condición clínica específica, consulta a tu médico tratante.</p>
+            <p className="text-[#4f5635]/80 mt-1">La información proporcionada no sustituye la valoración médica. Si presentas una condición clínica específica, consulta a tu médico tratante.</p>
           </CardContent>
         </div>
       </Section>

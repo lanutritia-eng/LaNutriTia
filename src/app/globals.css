@@ -7,7 +7,7 @@
 }
 
 body {
-  @apply bg-gradient-to-b from-white via-emerald-50/40 to-white text-slate-900;
+  @apply bg-gradient-to-b from-[#f8f3ea] via-[#f0e8d9] to-[#f8f3ea] text-slate-900;
 }
 .container {
   @apply w-full max-w-7xl mx-auto px-4 md:px-8;
@@ -40,9 +40,9 @@ footer a:hover { text-decoration: underline; }
 }
 
 @layer base {
-  :root { --brand: 25 60% 40%;  /* café */
-    --brand-secondary: 0 0% 50%; /* gris */
-    --brand-accent: 30 100% 50%; /* naranja */
+  :root {
+    --brand: 75 35% 36%; /* verde olivo principal */
+    --brand-secondary: 45 35% 62%; /* beige cálido de apoyo */
+    --brand-accent: 92 30% 48%; /* acento hierba suave */
   }
-}
 }

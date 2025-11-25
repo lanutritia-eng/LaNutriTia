@@ -14,13 +14,12 @@ export const BRAND = {
     }
   },
   colors: {
-    primary: "#1d9a6c"
+    primary: "#6b7b3b"
   },
   hero: {
     headline: "Menos regaños, más resultados",
-    cta: { label: "Agendar ahora", href: "https://marcogalindo.setmore.com/" ,
-    images: ["/hero/1.png","/hero/2.png","/hero/3.png"]
-  }
+    cta: { label: "Agendar ahora", href: "https://marcogalindo.setmore.com/" },
+    images: ["/hero/1.png", "/hero/2.png", "/hero/3.png"]
   },
   plans: {
     singles: [
@@ -39,7 +38,7 @@ export const BRAND = {
   },
   instagramEmbeds: [
     // Opcional: pega aquí URLs de posts de Instagram para embeber (uno por objeto)
-    // "https://www.instagram.com/p/XXXXXXXXX/"
+    "https://www.instagram.com/p/DQsrp-BDE8f/"
   ],
   instagramFeedIframeSrc: "",
   tiktokFeedIframeSrc: "",
