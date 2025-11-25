@@ -1,0 +1,6 @@
+<svg width="160" height="48" viewBox="0 0 160 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="44" height="44" rx="12" fill="hsl(24,35%,36%)"/>
+  <path d="M18 15c0-1.105.895-2 2-2h8c1.105 0 2 .895 2 2v18h-4V19h-4v14h-4V15Z" fill="#F8EEDF"/>
+  <path d="M32 21c0-1.105.895-2 2-2h6c3.866 0 7 3.134 7 7s-3.134 7-7 7h-4v4h-4V21Zm8 8a3 3 0 1 0 0-6h-4v6h4Z" fill="#F8EEDF"/>
+  <text x="58" y="30" fill="hsl(24,45%,18%)" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="700">La Nutri Tía</text>
+</svg>

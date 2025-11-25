@@ -2,11 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --radius: 1rem;
-}
-
 body {
+  @apply bg-gradient-to-b from-[hsl(var(--surface))] via-[hsl(var(--surface))] to-[hsl(var(--surface))] text-ink;
   @apply bg-gradient-to-b from-white via-indigo-50/40 to-white text-slate-900;
 }
 .container {
@@ -41,6 +38,18 @@ footer a:hover { text-decoration: underline; }
 
 @layer base {
   :root {
+    --radius: 1rem;
+    --brand: 24 35% 36%;    /* café principal */
+    --brand-2: 30 100% 52%; /* naranja acento */
+    --surface: 30 30% 96%;  /* nácar fondo suave */
+    --ink: 24 45% 18%;      /* texto principal */
+    --muted: 24 12% 40%;    /* texto secundario */
+  }
+}
+
+/* utilidades rápidas */
+.bg-soft { background-color: hsl(var(--surface)); }
+.text-ink { color: hsl(var(--ink)); }
     --brand: 267 76% 55%; /* violeta principal */
     --brand-secondary: 204 85% 35%; /* azul profundo de apoyo */
     --brand-accent: 331 82% 58%; /* acento magenta */

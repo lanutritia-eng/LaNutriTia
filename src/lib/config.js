@@ -26,14 +26,10 @@ export const BRAND = {
       { name: "Consulta Online", price: 550, desc: "Videollamada 45 min + plan personalizado" },
       { name: "Consulta Presencial", price: 650, desc: "Consulta en clínica 45 min + plan personalizado" }
     ],
-    packs: [
-      { name: "Paquete Online (4 consultas)", price: 1650, desc: "Ahorra en tus consultas virtuales" },
-      { name: "Paquete Presencial (4 consultas)", price: 1950, desc: "Acompañamiento en clínica" }
-    ],
     memberships: [
-      { name: "Básica", price: 149, features: ["Dieta mensual sin consulta", "Recetario económico del mes", "Acceso a comunidad"], ctaHref: "https://patreon.com/LaNutriTia"},
-      { name: "Pro", price: 449, features: ["Todo en Básica", "1 consulta online al mes", "Ajustes quincenales", "Prioridad en mensajes"], ctaHref: "https://patreon.com/LaNutriTia"},
-      { name: "VIP", price: 799, features: ["Todo en Pro", "2 consultas online al mes", "Plan de entrenamiento", "Revisión semanal"]}
+      { name: "Básica", price: 299, features: ["Dieta mensual sin consulta", "Recetario económico del mes", "Acceso a comunidad"], ctaHref: "https://patreon.com/LaNutriTia" },
+      { name: "Pro", price: 499, features: ["Todo en Básica", "1 consulta online al mes", "Ajustes quincenales", "Prioridad en mensajes"], ctaHref: "https://patreon.com/LaNutriTia" },
+      { name: "VIP", price: 799, features: ["Todo en Pro", "2 consultas online al mes", "Plan de entrenamiento", "Revisión semanal"], ctaHref: "https://marcogalindo.setmore.com/" }
     ]
   },
   instagramEmbeds: [
@@ -42,15 +38,30 @@ export const BRAND = {
   ],
   instagramFeedIframeSrc: "",
   tiktokFeedIframeSrc: "",
-  tiktokEmbeds: [
-    // Opcional: URLs de videos TikTok, ej: "https://www.tiktok.com/@lanutriitia/video/XXXXXXXXXXXX"
-  ],
+  tiktokEmbeds: [],
   posts: [
     {
-      title: "Guía rápida para bajar grasa sin perder músculo",
-      date: "2025-08-10",
-      url: "https://patreon.com/LaNutriTia",
-      tags: ["guías","entrenamiento"]
-    }
+      title: "Ayuno: lo bueno y lo malo",
+      date: "2025-11-25",
+      url: "https://www.patreon.com/posts/ayuno-lo-bueno-y-142436828",
+      tags: ["ayuno","educación"]
+    },
+    {
+      title: "Cómo construir tu plato ideal (fácil)",
+      date: "2025-11-22",
+      url: "https://www.patreon.com/posts/como-construir-138143987",
+      tags: ["guías","milpa"]
+    },
+    {
+      title: "Proteína: el macronutriente que más te ayuda",
+      date: "2025-11-18",
+      url: "https://www.patreon.com/posts/la-proteina-el-y-136889386",
+      tags: ["proteína","recomp"]
+    },
+
+    // placeholders (puedes reemplazar luego):
+    { title: "Pronto: Artículo #4", date: "—", url: "https://patreon.com/LaNutriTia", tags: ["pronto"] },
+    { title: "Pronto: Artículo #5", date: "—", url: "https://patreon.com/LaNutriTia", tags: ["pronto"] },
+    { title: "Pronto: Artículo #6", date: "—", url: "https://patreon.com/LaNutriTia", tags: ["pronto"] }
   ]
 };

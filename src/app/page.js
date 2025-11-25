@@ -22,8 +22,8 @@ function Section({ id, eyebrow, title, subtitle, children }){
             <span className="h-1 w-8 rounded-full bg-brand" />
           </div>
         )}
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight">{title}</h2>
-        {subtitle && <p className="mt-4 text-slate-600 max-w-2xl mx-auto">{subtitle}</p>}
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">{title}</h2>
+        {subtitle && <p className="mt-4 text-[hsl(var(--muted))] max-w-2xl mx-auto">{subtitle}</p>}
       </motion.div>
       {children}
     </section>
@@ -40,7 +40,7 @@ function Feature({ Icon, title, desc }){
         </div>
       </CardHeader>
       <CardContent>
-        <p className="text-slate-600 text-sm leading-relaxed">{desc}</p>
+        <p className="text-[hsl(var(--muted))] text-sm leading-relaxed">{desc}</p>
       </CardContent>
     </div>
   )
@@ -89,9 +89,9 @@ export default function Page(){
       {/* Navbar */}
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/60 border-b">
         <div className="container h-16 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 font-bold text-xl">
-            <div className="h-9 w-9 rounded-2xl bg-brand grid place-items-center text-white font-black">NT</div>
-            <span>La Nutri Tía</span>
+          <a href="/" className="inline-flex items-center gap-2">
+            <img src="/logo.svg" alt="La Nutri Tía" className="h-7 w-auto" />
+            <span className="sr-only">La Nutri Tía</span>
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#servicios" className="hover:text-brand">Servicios</a>
@@ -123,7 +123,7 @@ export default function Page(){
             <h1 className="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">
               {BRAND.hero.headline}
             </h1>
-            <p className="mt-4 text-lg text-slate-600 max-w-xl">
+            <p className="mt-4 text-lg text-[hsl(var(--muted))] max-w-xl">
               Soy Marco, tu Nutri Tía. Te acompaño con planes sencillos, recetas deliciosas y hábitos reales para resultados sostenibles.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -134,7 +134,13 @@ export default function Page(){
               <div className="flex -space-x-3">
                 {[...Array(5)].map((_,i)=> (<div key={i} className="h-10 w-10 rounded-full ring-2 ring-white bg-indigo-200" />))}
               </div>
-              <p className="text-sm text-slate-600">+2,000 pacientes acompañados | 4.9/5 satisfacción</p>
+              <p className="text-sm text-[hsl(var(--muted))]">+2,000 pacientes acompañados | 4.9/5 satisfacción</p>
+            </div>
+
+            <div className="mt-6 flex gap-3 overflow-x-auto snap-x snap-mandatory no-scrollbar py-2">
+              {(BRAND.hero.images || []).slice(0,5).map((src, i)=>(
+                <img key={i} src={src} alt="" className="h-44 w-72 object-cover rounded-2xl snap-start shrink-0" />
+              ))}
             </div>
           </motion.div>
 
@@ -153,7 +159,7 @@ export default function Page(){
                 <Flame className="h-5 w-5 text-brand" />
                 <div>
                   <p className="text-sm font-semibold leading-tight">Baja grasa corporal</p>
-                  <p className="text-xs text-slate-600 -mt-0.5">sin perder músculo</p>
+                  <p className="text-xs text-[hsl(var(--muted))] -mt-0.5">sin perder músculo</p>
                 </div>
               </CardContent>
             </div>
@@ -162,7 +168,7 @@ export default function Page(){
                 <HeartPulse className="h-5 w-5 text-brand" />
                 <div>
                   <p className="text-sm font-semibold leading-tight">Enfoque clínico</p>
-                  <p className="text-xs text-slate-600 -mt-0.5">IMC, TMB, grasa visceral</p>
+                  <p className="text-xs text-[hsl(var(--muted))] -mt-0.5">IMC, TMB, grasa visceral</p>
                 </div>
               </CardContent>
             </div>
@@ -194,54 +200,66 @@ export default function Page(){
         </div>
       </Section>
 
-      {/* Planes */}
-      <Section id="planes" eyebrow="Planes" title="Consultas, paquetes y membresías">
-        <div className="grid md:grid-cols-2 gap-6 items-stretch">
-          <div className="card">
-            <CardHeader><CardTitle>Consultas individuales</CardTitle></CardHeader>
-            <CardContent>
-              <div className="grid gap-4">
-                {[
-                  { name: "Consulta Online", price: 550, desc: "Videollamada 45 min + plan personalizado" },
-                  { name: "Consulta Presencial", price: 650, desc: "Consulta en clínica 45 min + plan personalizado" },
-                ].map((p, i)=> (
-                  <div key={i} className="flex items-center justify-between border rounded-2xl p-4">
-                    <div>
-                      <p className="font-semibold">{p.name}</p>
-                      <p className="text-sm text-slate-600">{p.desc}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-2xl font-bold">${p.price}</p>
-                      <Button className="mt-2" asChild href={BRAND.setmore}><span>Agendar</span></Button>
-                    </div>
-                  </div>
-                ))}
+      <div className="container py-12">
+        <section className="bg-soft py-10 px-6 md:px-10 rounded-3xl">
+          <div className="grid md:grid-cols-2 gap-6 items-center">
+            <div>
+              <h2 className="text-2xl font-bold text-ink">Acompañamiento realista</h2>
+              <p className="text-slate-600 mt-2">Menos regaños, más resultados. Plan de cinco tiempos, esferas por color y recetas de la milpa.</p>
+              <div className="mt-5">
+                <Button asChild><a href={BRAND.setmore}>Agendar ahora</a></Button>
               </div>
-            </CardContent>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {(BRAND.hero.images || []).slice(0,4).map((src,i)=>(
+                <img key={i} src={src} alt="" className="rounded-2xl object-cover h-40 w-full" />
+              ))}
+            </div>
           </div>
+        </section>
+      </div>
 
-          <div className="card">
-            <CardHeader><CardTitle>Paquetes (4 consultas)</CardTitle></CardHeader>
-            <CardContent>
-              <div className="grid gap-4">
-                {[
-                  { name: "Paquete Online (4 consultas)", price: 1650, desc: "Ahorra en tus consultas virtuales" },
-                  { name: "Paquete Presencial (4 consultas)", price: 1950, desc: "Acompañamiento en clínica" },
-                ].map((p, i)=> (
-                  <div key={i} className="flex items-center justify-between border rounded-2xl p-4">
-                    <div>
-                      <p className="font-semibold">{p.name}</p>
-                      <p className="text-sm text-slate-600">{p.desc}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-2xl font-bold">${p.price}</p>
-                      <Button className="mt-2" asChild href={BRAND.setmore}><span>Agendar</span></Button>
-                    </div>
-                  </div>
-                ))}
+      {/* Planes */}
+      <Section id="planes" eyebrow="Planes" title="Consultas y membresías">
+        <div className="card mb-8">
+          <CardHeader><CardTitle>Consultas individuales</CardTitle></CardHeader>
+          <CardContent>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="rounded-2xl border bg-white p-6 shadow-sm">
+                <h3 className="text-xl font-semibold text-ink">Consulta Online</h3>
+                <p className="text-sm text-slate-600 mt-1">Videollamada • 50–60 min</p>
+                <ul className="text-sm mt-4 space-y-2 text-ink">
+                  <li>• Evaluación y objetivos</li>
+                  <li>• Menú personalizado</li>
+                  <li>• Guías rápidas y recetas</li>
+                </ul>
+                <div className="mt-5 flex items-baseline gap-2">
+                  <span className="text-3xl font-extrabold">$550</span>
+                  <span className="text-slate-500">MXN</span>
+                </div>
+                <div className="mt-5">
+                  <Button asChild className="w-full"><a href={BRAND.setmore}>Agendar</a></Button>
+                </div>
               </div>
-            </CardContent>
-          </div>
+
+              <div className="rounded-2xl border bg-white p-6 shadow-sm">
+                <h3 className="text-xl font-semibold text-ink">Consulta Presencial</h3>
+                <p className="text-sm text-slate-600 mt-1">CDMX • 50–60 min</p>
+                <ul className="text-sm mt-4 space-y-2 text-ink">
+                  <li>• Evaluación y objetivos</li>
+                  <li>• Menú personalizado</li>
+                  <li>• Guías rápidas y recetas</li>
+                </ul>
+                <div className="mt-5 flex items-baseline gap-2">
+                  <span className="text-3xl font-extrabold">$650</span>
+                  <span className="text-slate-500">MXN</span>
+                </div>
+                <div className="mt-5">
+                  <Button asChild className="w-full"><a href={BRAND.setmore}>Agendar</a></Button>
+                </div>
+              </div>
+            </div>
+          </CardContent>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 items-stretch mt-6">
@@ -256,10 +274,10 @@ export default function Page(){
         </div>
       )}
     </div>
-    {m.features && (
-      <ul className="space-y-3 mt-4">
-        {m.features.map((f, i)=> (
-          <li key={i} className="flex items-start text-sm">• {f}</li>
+        {m.features && (
+          <ul className="space-y-3 mt-4">
+            {m.features.map((f, i)=> (
+          <li key={i} className="flex items-start text-sm text-ink">• {f}</li>
         ))}
       </ul>
     )}
@@ -448,10 +466,10 @@ export default function Page(){
       <footer className="border-t bg-white">
         <div className="container py-12 grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 font-bold text-lg">
-              <div className="h-8 w-8 rounded-2xl bg-brand grid place-items-center text-white font-black">NT</div>
-              <span>La Nutri Tía</span>
-            </div>
+            <a href="/" className="inline-flex items-center gap-2">
+              <img src="/logo.svg" alt="La Nutri Tía" className="h-7 w-auto" />
+              <span className="sr-only">La Nutri Tía</span>
+            </a>
             <p className="mt-3 text-sm text-slate-600 max-w-md">Nutrición holística, sin culpas y con resultados reales. Planes personalizados, recetarios y una comunidad que te acompaña.</p>
           </div>
           <div>
