@@ -14,7 +14,7 @@ export const BRAND = {
     }
   },
   colors: {
-    primary: "#6b7b3b"
+    primary: "#7a4df3"
   },
   hero: {
     headline: "Menos regaños, más resultados",
@@ -33,9 +33,8 @@ export const BRAND = {
     ]
   },
   instagramEmbeds: [
-    "https://www.instagram.com/p/DQsrp-BDE8f/",
-    "https://www.instagram.com/p/DQaqDghDO1_/",
-    "https://www.instagram.com/p/DPVGGGWDJJX/"
+    // Opcional: pega aquí URLs de posts de Instagram para embeber (uno por objeto)
+    "https://www.instagram.com/p/DQsrp-BDE8f/"
   ],
   instagramFeedIframeSrc: "",
   tiktokFeedIframeSrc: "",
