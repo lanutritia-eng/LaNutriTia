@@ -14,13 +14,12 @@ export const BRAND = {
     }
   },
   colors: {
-    primary: "#1d9a6c"
+    primary: "#7a4df3"
   },
   hero: {
     headline: "Menos regaños, más resultados",
-    cta: { label: "Agendar ahora", href: "https://marcogalindo.setmore.com/" ,
-    images: ["/hero/1.png","/hero/2.png","/hero/3.png"]
-  }
+    cta: { label: "Agendar ahora", href: "https://marcogalindo.setmore.com/" },
+    images: ["/hero/1.png", "/hero/2.png", "/hero/3.png"]
   },
   plans: {
     singles: [
