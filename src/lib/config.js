@@ -38,7 +38,7 @@ export const BRAND = {
   },
   instagramEmbeds: [
     // Opcional: pega aquí URLs de posts de Instagram para embeber (uno por objeto)
-    // "https://www.instagram.com/p/XXXXXXXXX/"
+    "https://www.instagram.com/p/DQsrp-BDE8f/"
   ],
   instagramFeedIframeSrc: "",
   tiktokFeedIframeSrc: "",
