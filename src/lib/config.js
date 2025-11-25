@@ -21,7 +21,6 @@ export const BRAND = {
     cta: { label: "Agendar ahora", href: "https://marcogalindo.setmore.com/" },
     images: ["/hero/1.png", "/hero/2.png", "/hero/3.png"]
   },
-  },
   plans: {
     singles: [
       { name: "Consulta Online", price: 550, desc: "Videollamada 45 min + plan personalizado" },
