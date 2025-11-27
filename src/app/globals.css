@@ -38,15 +38,17 @@ footer a:hover { text-decoration: underline; }
 }
 
 @layer base {
-  :root {
-    --radius: 1rem;
-    --brand: 40 36% 26%;       /* espresso terroso */
-    --brand-2: 56 20% 47%;     /* oliva ahumado */
-    --surface: 41 61% 89%;     /* marfil cálido */
-    --surface-strong: 49 27% 71%;
-    --ink: 41 38% 17%;         /* texto principal */
-    --muted: 49 20% 38%;       /* texto secundario */
-  }
+:root {
+  --radius: 1rem;
+  --brand: 40 36% 26%;       /* espresso terroso */
+  --brand-2: 56 20% 47%;     /* oliva ahumado */
+  --surface: 41 61% 89%;     /* marfil cálido */
+  --surface-strong: 49 27% 71%;
+  --ink: 41 38% 17%;         /* texto principal */
+  --muted: 49 20% 38%;       /* texto secundario */
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-heading: "Playfair Display", "Georgia", serif;
+}
 }
 
 /* utilidades rápidas */
