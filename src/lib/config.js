@@ -17,9 +17,8 @@ export const BRAND = {
     primary: "#7a4df3"
   },
   hero: {
-    headline: "Menos regaños, más resultados",
-    cta: { label: "Agendar ahora", href: "https://marcogalindo.setmore.com/" },
-    images: ["/hero/1.png", "/hero/2.png", "/hero/3.png"]
+    headline: "Acompañamiento personalizado que sí cabe en tu vida",
+    cta: { label: "Agendar ahora", href: "https://marcogalindo.setmore.com/" }
   },
   plans: {
     singles: [
