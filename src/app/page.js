@@ -117,6 +117,10 @@ export default function Page(){
         <div className="absolute -bottom-16 -left-24 bg-[#8f8c60]/30 h-64 w-64 rounded-full blur-3xl" />
         <div className="container py-16 md:py-24 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center relative">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="space-y-6">
+        <div className="absolute -top-24 -right-24 bg-[#c9c2a2]/50 h-72 w-72 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 bg-[#8f8c60]/30 h-72 w-72 rounded-full blur-3xl" />
+        <div className="container py-16 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 rounded-full bg-white border px-3 py-1 text-xs text-brand">
               <ShieldCheck className="h-4 w-4" /> Nutrición holística y sin culpas
             </div>
@@ -142,6 +146,9 @@ export default function Page(){
                   <p className="font-semibold text-ink">Seguimiento cercano</p>
                   <p className="text-sm text-[hsl(var(--muted))]">Mensajes semanales, ajustes según progreso y educación sin culpas.</p>
                 </div>
+            <div className="mt-6 flex items-center gap-6">
+              <div className="flex -space-x-3">
+                {[...Array(5)].map((_,i)=> (<div key={i} className="h-10 w-10 rounded-full ring-2 ring-white bg-[#c9c2a2]" />))}
               </div>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -161,6 +168,13 @@ export default function Page(){
                 <p className="text-sm uppercase tracking-widest">Sobre mí</p>
                 <h3 className="text-2xl font-bold mt-1">Marco · La Nutri Tía</h3>
                 <p className="text-sm text-[hsl(var(--muted))] mt-2">Nutriólogo clínico, divulgador y acompañante respetuoso. Trabajo con pacientes trans, salud hormonal, pérdida de grasa y bienestar sin dietas punitivas.</p>
+            <div className="aspect-[4/5] rounded-3xl bg-white shadow-2xl p-4 border">
+              <div className="h-full w-full rounded-2xl bg-gradient-to-br from-[#f4e9d2] via-[#c9c2a2] to-[#8f8c60] grid place-items-center text-ink">
+                <div className="text-center px-6">
+                  <p className="text-sm uppercase tracking-widest">La Nutri Tía</p>
+                  <h3 className="text-2xl font-bold mt-1">Menos regaños, más resultados</h3>
+                  <p className="text-sm text-[hsl(var(--muted))] mt-2">Plan de 5 tiempos, esferas por color, recetas de la milpa y acompañamiento realista.</p>
+                </div>
               </div>
               <div className="space-y-3">
                 {["Lic. en Nutrición clínica", "Especialista en terapia hormonal y composición corporal", "Recetas económicas con ingredientes de la milpa", "Educación alimentaria sin juicios"].map((item, idx)=>(

@@ -18,6 +18,11 @@ Edita `src/lib/config.js` para cambiar:
 - planes y precios
 - posts de Instagram/TikTok a embeber (opcional)
 
+### Imágenes del hero (hero 1, hero 2, hero 3 y hero 4)
+1) Reemplaza los archivos en `public/hero/1.svg`, `2.svg`, `3.svg` y `4.svg` con tus ilustraciones o fotos (ideal 1200×736 px). Si usas PNG/JPG, actualiza las extensiones en `src/lib/config.js`.
+2) Si usas otros nombres o cantidades, actualiza el arreglo `hero.images` en `src/lib/config.js` para que apunten a las nuevas rutas.
+3) Las imágenes se mostrarán en los carruseles del hero y del bloque "Acompañamiento realista".
+
 ## Setmore
 Puedes usar el link directo (ya está). Si quieres el botón/widget oficial, pega el snippet que te da Setmore dentro de la sección "Agenda".
 
