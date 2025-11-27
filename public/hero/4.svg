@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 736" role="img" aria-labelledby="title desc">
+  <title id="title">Hero abstract 4</title>
+  <desc id="desc">Concentric rhythm inspired by hand-drawn circles</desc>
+  <defs>
+    <radialGradient id="spot" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#f4e9d2" />
+      <stop offset="100%" stop-color="#c9c2a2" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="736" fill="#5a4a2a" rx="32" />
+  <rect x="40" y="36" width="1120" height="664" rx="28" fill="url(#spot)" opacity="0.96" />
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="600" cy="360" r="260" stroke="#8f8c60" stroke-width="26" opacity="0.4" />
+    <circle cx="600" cy="360" r="180" stroke="#5a4a2a" stroke-width="22" opacity="0.45" />
+    <circle cx="600" cy="360" r="110" stroke="#8f8c60" stroke-width="18" opacity="0.5" />
+    <circle cx="600" cy="360" r="60" stroke="#5a4a2a" stroke-width="14" opacity="0.55" />
+  </g>
+  <circle cx="210" cy="180" r="90" fill="#8f8c60" opacity="0.22" />
+  <circle cx="990" cy="520" r="120" fill="#5a4a2a" opacity="0.14" />
+</svg>
