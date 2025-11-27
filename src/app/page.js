@@ -35,7 +35,7 @@ function Feature({ Icon, title, desc }){
     <div className="card">
       <CardHeader>
         <div className="flex items-center gap-3">
-          <div className="p-3 rounded-2xl bg-indigo-50"><Icon className="h-6 w-6 text-brand" /></div>
+          <div className="p-3 rounded-2xl bg-[#f4e9d2]"><Icon className="h-6 w-6 text-brand" /></div>
           <CardTitle className="text-lg">{title}</CardTitle>
         </div>
       </CardHeader>
@@ -113,8 +113,8 @@ export default function Page(){
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="absolute -top-24 -right-24 bg-indigo-200/40 h-72 w-72 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 bg-fuchsia-200/35 h-72 w-72 rounded-full blur-3xl" />
+        <div className="absolute -top-24 -right-24 bg-[#c9c2a2]/50 h-72 w-72 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 bg-[#8f8c60]/30 h-72 w-72 rounded-full blur-3xl" />
         <div className="container py-16 md:py-28 grid md:grid-cols-2 gap-10 items-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="inline-flex items-center gap-2 rounded-full bg-white border px-3 py-1 text-xs text-brand">
@@ -132,7 +132,7 @@ export default function Page(){
             </div>
             <div className="mt-6 flex items-center gap-6">
               <div className="flex -space-x-3">
-                {[...Array(5)].map((_,i)=> (<div key={i} className="h-10 w-10 rounded-full ring-2 ring-white bg-indigo-200" />))}
+                {[...Array(5)].map((_,i)=> (<div key={i} className="h-10 w-10 rounded-full ring-2 ring-white bg-[#c9c2a2]" />))}
               </div>
               <p className="text-sm text-[hsl(var(--muted))]">+2,000 pacientes acompañados | 4.9/5 satisfacción</p>
             </div>
@@ -146,11 +146,11 @@ export default function Page(){
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="relative">
             <div className="aspect-[4/5] rounded-3xl bg-white shadow-2xl p-4 border">
-              <div className="h-full w-full rounded-2xl bg-gradient-to-br from-indigo-100 via-violet-100 to-fuchsia-100 grid place-items-center text-indigo-900">
+              <div className="h-full w-full rounded-2xl bg-gradient-to-br from-[#f4e9d2] via-[#c9c2a2] to-[#8f8c60] grid place-items-center text-ink">
                 <div className="text-center px-6">
                   <p className="text-sm uppercase tracking-widest">La Nutri Tía</p>
                   <h3 className="text-2xl font-bold mt-1">Menos regaños, más resultados</h3>
-                  <p className="text-sm text-indigo-800/80 mt-2">Plan de 5 tiempos, esferas por color, recetas de la milpa y acompañamiento realista.</p>
+                  <p className="text-sm text-[hsl(var(--muted))] mt-2">Plan de 5 tiempos, esferas por color, recetas de la milpa y acompañamiento realista.</p>
                 </div>
               </div>
             </div>
@@ -454,10 +454,10 @@ export default function Page(){
             </div>
           </div>
         </div>
-        <div className="card border-indigo-200 bg-indigo-50 mt-6">
-          <CardContent className="p-6 text-sm text-indigo-950">
+        <div className="card border-[#c9c2a2] bg-[#f4e9d2] mt-6">
+          <CardContent className="p-6 text-sm text-ink">
             <p className="font-semibold">Aviso importante</p>
-            <p className="text-indigo-900/80 mt-1">La información proporcionada no sustituye la valoración médica. Si presentas una condición clínica específica, consulta a tu médico tratante.</p>
+            <p className="text-[hsl(var(--muted))] mt-1">La información proporcionada no sustituye la valoración médica. Si presentas una condición clínica específica, consulta a tu médico tratante.</p>
           </CardContent>
         </div>
       </Section>
