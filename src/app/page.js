@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { BRAND } from "@/lib/config";
-import { Check, ChefHat, HeartPulse, Apple, PlayCircle, Instagram, Youtube, Mail, Phone, Calendar, Salad, MessagesSquare, ShieldCheck, Flame, Syringe, MessageCircle } from "lucide-react";
+import { Check, ChefHat, HeartPulse, Apple, PlayCircle, Instagram, Youtube, Mail, Phone, Calendar, Salad, MessagesSquare, ShieldCheck, Flame, Syringe, MessageCircle, Sparkles, UserRoundCheck, Target } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
 
@@ -113,6 +113,10 @@ export default function Page(){
 
       {/* Hero */}
       <section className="relative overflow-hidden">
+        <div className="absolute -top-20 -right-24 bg-[#c9c2a2]/50 h-64 w-64 rounded-full blur-3xl" />
+        <div className="absolute -bottom-16 -left-24 bg-[#8f8c60]/30 h-64 w-64 rounded-full blur-3xl" />
+        <div className="container py-16 md:py-24 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center relative">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="space-y-6">
         <div className="absolute -top-24 -right-24 bg-[#c9c2a2]/50 h-72 w-72 rounded-full blur-3xl" />
         <div className="absolute -bottom-24 -left-24 bg-[#8f8c60]/30 h-72 w-72 rounded-full blur-3xl" />
         <div className="container py-16 md:py-28 grid md:grid-cols-2 gap-10 items-center">
@@ -120,31 +124,50 @@ export default function Page(){
             <div className="inline-flex items-center gap-2 rounded-full bg-white border px-3 py-1 text-xs text-brand">
               <ShieldCheck className="h-4 w-4" /> Nutrición holística y sin culpas
             </div>
-            <h1 className="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">
-              {BRAND.hero.headline}
-            </h1>
-            <p className="mt-4 text-lg text-[hsl(var(--muted))] max-w-xl">
-              Soy Marco, tu Nutri Tía. Te acompaño con planes sencillos, recetas deliciosas y hábitos reales para resultados sostenibles.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button asChild href={BRAND.hero.cta.href}><span>{BRAND.hero.cta.label}</span></Button>
-              <Button variant="outline" asChild href="#social"><span className="flex items-center"><PlayCircle className="h-4 w-4 mr-2" />Ver mis contenidos</span></Button>
+            <div className="space-y-3">
+              <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+                {BRAND.hero.headline}
+              </h1>
+              <p className="text-lg text-[hsl(var(--muted))] max-w-2xl">
+                Soy Marco (“La Nutri Tía”), nutriólogo clínico y creador de contenido. Diseño planes realistas, recetas ricas y un seguimiento cercano para que bajes grasa, cuides tu salud hormonal y mejores tu relación con la comida.
+              </p>
             </div>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="flex items-start gap-3">
+                <div className="p-2 rounded-xl bg-[#f4e9d2]"><Sparkles className="h-4 w-4 text-brand" /></div>
+                <div>
+                  <p className="font-semibold text-ink">Planes hechos a medida</p>
+                  <p className="text-sm text-[hsl(var(--muted))]">5 tiempos, esferas por color y menús adaptados a tus metas y gustos.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="p-2 rounded-xl bg-[#f4e9d2]"><UserRoundCheck className="h-4 w-4 text-brand" /></div>
+                <div>
+                  <p className="font-semibold text-ink">Seguimiento cercano</p>
+                  <p className="text-sm text-[hsl(var(--muted))]">Mensajes semanales, ajustes según progreso y educación sin culpas.</p>
+                </div>
             <div className="mt-6 flex items-center gap-6">
               <div className="flex -space-x-3">
                 {[...Array(5)].map((_,i)=> (<div key={i} className="h-10 w-10 rounded-full ring-2 ring-white bg-[#c9c2a2]" />))}
               </div>
-              <p className="text-sm text-[hsl(var(--muted))]">+2,000 pacientes acompañados | 4.9/5 satisfacción</p>
             </div>
-
-            <div className="mt-6 flex gap-3 overflow-x-auto snap-x snap-mandatory no-scrollbar py-2">
-              {(BRAND.hero.images || []).slice(0,5).map((src, i)=>(
-                <img key={i} src={src} alt="" className="h-44 w-72 object-cover rounded-2xl snap-start shrink-0" />
-              ))}
+            <div className="flex flex-wrap gap-3">
+              <Button asChild href={BRAND.hero.cta.href}><span>{BRAND.hero.cta.label}</span></Button>
+              <Button variant="outline" asChild href="#servicios"><span className="flex items-center"><PlayCircle className="h-4 w-4 mr-2" />Ver cómo trabajo</span></Button>
+            </div>
+            <div className="flex flex-wrap items-center gap-4 text-sm text-[hsl(var(--muted))]">
+              <div className="flex items-center gap-2"><div className="h-2.5 w-2.5 rounded-full bg-brand" /> +2,000 pacientes acompañados</div>
+              <div className="flex items-center gap-2"><div className="h-2.5 w-2.5 rounded-full bg-[#8f8c60]" /> 4.9/5 satisfacción</div>
+              <div className="flex items-center gap-2"><div className="h-2.5 w-2.5 rounded-full bg-[#5a4a2a]" /> Enfoque inclusivo y clínico</div>
             </div>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="relative">
+            <div className="rounded-3xl bg-white shadow-2xl border p-6 space-y-4">
+              <div className="rounded-2xl bg-gradient-to-br from-[#f4e9d2] via-[#c9c2a2] to-[#8f8c60] p-6 text-ink">
+                <p className="text-sm uppercase tracking-widest">Sobre mí</p>
+                <h3 className="text-2xl font-bold mt-1">Marco · La Nutri Tía</h3>
+                <p className="text-sm text-[hsl(var(--muted))] mt-2">Nutriólogo clínico, divulgador y acompañante respetuoso. Trabajo con pacientes trans, salud hormonal, pérdida de grasa y bienestar sin dietas punitivas.</p>
             <div className="aspect-[4/5] rounded-3xl bg-white shadow-2xl p-4 border">
               <div className="h-full w-full rounded-2xl bg-gradient-to-br from-[#f4e9d2] via-[#c9c2a2] to-[#8f8c60] grid place-items-center text-ink">
                 <div className="text-center px-6">
@@ -153,24 +176,33 @@ export default function Page(){
                   <p className="text-sm text-[hsl(var(--muted))] mt-2">Plan de 5 tiempos, esferas por color, recetas de la milpa y acompañamiento realista.</p>
                 </div>
               </div>
-            </div>
-            <div className="absolute -bottom-6 -left-6 card">
-              <CardContent className="p-4 flex items-center gap-3">
-                <Flame className="h-5 w-5 text-brand" />
-                <div>
-                  <p className="text-sm font-semibold leading-tight">Baja grasa corporal</p>
-                  <p className="text-xs text-[hsl(var(--muted))] -mt-0.5">sin perder músculo</p>
+              <div className="space-y-3">
+                {["Lic. en Nutrición clínica", "Especialista en terapia hormonal y composición corporal", "Recetas económicas con ingredientes de la milpa", "Educación alimentaria sin juicios"].map((item, idx)=>(
+                  <div key={idx} className="flex items-start gap-3 text-sm text-ink">
+                    <Check className="h-4 w-4 text-brand mt-0.5" /> {item}
+                  </div>
+                ))}
+              </div>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <div className="rounded-2xl border p-3 flex items-start gap-3">
+                  <Target className="h-4 w-4 text-brand mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold">Resultados sostenibles</p>
+                    <p className="text-xs text-[hsl(var(--muted))]">Sin regaños, con métricas claras y ajustes constantes.</p>
+                  </div>
                 </div>
-              </CardContent>
-            </div>
-            <div className="absolute -top-6 -right-6 card">
-              <CardContent className="p-4 flex items-center gap-3">
-                <HeartPulse className="h-5 w-5 text-brand" />
-                <div>
-                  <p className="text-sm font-semibold leading-tight">Enfoque clínico</p>
-                  <p className="text-xs text-[hsl(var(--muted))] -mt-0.5">IMC, TMB, grasa visceral</p>
+                <div className="rounded-2xl border p-3 flex items-start gap-3">
+                  <HeartPulse className="h-4 w-4 text-brand mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold">Salud primero</p>
+                    <p className="text-xs text-[hsl(var(--muted))]">Glucosa, lípidos, IMC, TMB y grasa visceral bajo control.</p>
+                  </div>
                 </div>
-              </CardContent>
+              </div>
+              <div className="flex flex-wrap gap-2 text-sm text-[hsl(var(--muted))]">
+                <a href={BRAND.whatsapp} className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-[#f4e9d2] text-ink"><MessagesSquare className="h-4 w-4" /> Enviarme mensaje</a>
+                <a href={`mailto:${BRAND.email}`} className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white border text-ink"><Mail className="h-4 w-4" /> Escríbeme por correo</a>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -202,18 +234,32 @@ export default function Page(){
 
       <div className="container py-12">
         <section className="bg-soft py-10 px-6 md:px-10 rounded-3xl">
-          <div className="grid md:grid-cols-2 gap-6 items-center">
-            <div>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-3">
               <h2 className="text-2xl font-bold text-ink">Acompañamiento realista</h2>
-              <p className="text-slate-600 mt-2">Menos regaños, más resultados. Plan de cinco tiempos, esferas por color y recetas de la milpa.</p>
-              <div className="mt-5">
-                <Button asChild><a href={BRAND.setmore}>Agendar ahora</a></Button>
+              <p className="text-slate-600">Sin dietas extremas ni regaños: te llevo paso a paso con menús claros, recetas fáciles y un seguimiento que se ajusta a tu ritmo.</p>
+              <div className="grid sm:grid-cols-2 gap-3 text-sm text-ink">
+                {["Menú de 5 tiempos con equivalentes", "Opciones económicas y de la milpa", "Material descargable y guías rápidas", "Mensajes y ajustes semanales"].map((item,i)=>(
+                  <div key={i} className="rounded-2xl border bg-white p-4 flex items-start gap-3">
+                    <Check className="h-4 w-4 text-brand mt-0.5" /> {item}
+                  </div>
+                ))}
               </div>
+              <div className="mt-2 text-sm text-[hsl(var(--muted))]">Ideal para pérdida de grasa, recomposición, salud hormonal, pacientes trans y quien busca comer rico sin culpa.</div>
             </div>
-            <div className="grid grid-cols-2 gap-3">
-              {(BRAND.hero.images || []).slice(0,4).map((src,i)=>(
-                <img key={i} src={src} alt="" className="rounded-2xl object-cover h-40 w-full" />
-              ))}
+            <div className="space-y-4">
+              <div className="rounded-2xl border bg-white p-5 shadow-sm">
+                <p className="text-xs uppercase tracking-widest text-brand">Convéncete en 3 pasos</p>
+                <ul className="mt-3 space-y-2 text-sm text-ink">
+                  <li className="flex items-start gap-3"><Flame className="h-4 w-4 text-brand mt-0.5" /> Revisión de hábitos, tiempos y métricas clave.</li>
+                  <li className="flex items-start gap-3"><HeartPulse className="h-4 w-4 text-brand mt-0.5" /> Plan inicial con objetivos medibles a 4 semanas.</li>
+                  <li className="flex items-start gap-3"><MessagesSquare className="h-4 w-4 text-brand mt-0.5" /> Ajustes semanales y material práctico para que no te quedes sin ideas.</li>
+                </ul>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild><a href={BRAND.setmore}>Agenda tu primera consulta</a></Button>
+                <Button variant="outline" asChild href={BRAND.whatsapp}><span className="flex items-center"><Phone className="h-4 w-4 mr-2" />Resolver dudas</span></Button>
+              </div>
             </div>
           </div>
         </section>
