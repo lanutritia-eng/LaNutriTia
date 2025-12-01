@@ -3,14 +3,15 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gradient-to-b from-[hsl(var(--surface))] via-[hsl(var(--surface))] to-[hsl(var(--surface))] text-ink;
-  @apply bg-gradient-to-b from-white via-indigo-50/40 to-white text-slate-900;
+  @apply bg-gradient-to-b from-[#f4e9d2] via-[#efe2c3] to-[#f4e9d2];
+  color: hsl(var(--ink));
+  font-family: var(--font-body);
 }
 .container {
   @apply w-full max-w-7xl mx-auto px-4 md:px-8;
 }
 .card {
-  @apply rounded-2xl border bg-white shadow-sm;
+  @apply rounded-2xl border border-[#c9c2a2]/50 bg-white shadow-sm;
 }
 .btn {
   @apply inline-flex items-center justify-center rounded-2xl px-4 py-2 font-medium border;
@@ -37,21 +38,25 @@ footer a:hover { text-decoration: underline; }
 }
 
 @layer base {
-  :root {
-    --radius: 1rem;
-    --brand: 24 35% 36%;    /* café principal */
-    --brand-2: 30 100% 52%; /* naranja acento */
-    --surface: 30 30% 96%;  /* nácar fondo suave */
-    --ink: 24 45% 18%;      /* texto principal */
-    --muted: 24 12% 40%;    /* texto secundario */
-  }
+:root {
+  --radius: 1rem;
+  --brand: 40 36% 26%;       /* espresso terroso */
+  --brand-2: 56 20% 47%;     /* oliva ahumado */
+  --surface: 41 61% 89%;     /* marfil cálido */
+  --surface-strong: 49 27% 71%;
+  --ink: 41 38% 17%;         /* texto principal */
+  --muted: 49 20% 38%;       /* texto secundario */
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-heading: "Playfair Display", "Georgia", serif;
+}
 }
 
 /* utilidades rápidas */
 .bg-soft { background-color: hsl(var(--surface)); }
 .text-ink { color: hsl(var(--ink)); }
-    --brand: 267 76% 55%; /* violeta principal */
-    --brand-secondary: 204 85% 35%; /* azul profundo de apoyo */
-    --brand-accent: 331 82% 58%; /* acento magenta */
-  }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
 

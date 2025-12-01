@@ -15,6 +15,7 @@ npm run dev
 Edita `src/lib/config.js` para cambiar:
 - textos del hero y CTA
 - enlaces (Instagram, TikTok, WhatsApp, Setmore, email)
+- reseñas de Setmore (iframe público)
 - planes y precios
 - posts de Instagram/TikTok a embeber (opcional)
 

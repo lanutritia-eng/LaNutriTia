@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 736" role="img" aria-labelledby="title desc">
+  <title id="title">Hero abstract 2</title>
+  <desc id="desc">Layered arches inspired by the new palette</desc>
+  <defs>
+    <linearGradient id="arch" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5a4a2a" />
+      <stop offset="100%" stop-color="#8f8c60" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="736" fill="#f4e9d2" rx="32" />
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M120 640 C 120 340 380 140 600 140 C 820 140 1080 340 1080 640" stroke="#c9c2a2" stroke-width="70" />
+    <path d="M200 640 C 200 380 410 220 600 220 C 790 220 1000 380 1000 640" stroke="url(#arch)" stroke-width="70" opacity="0.8" />
+    <path d="M320 640 C 320 440 470 320 600 320 C 730 320 880 440 880 640" stroke="#5a4a2a" stroke-width="55" opacity="0.55" />
+    <path d="M430 640 C 430 500 520 420 600 420 C 680 420 770 500 770 640" stroke="#8f8c60" stroke-width="40" opacity="0.5" />
+  </g>
+  <circle cx="1020" cy="140" r="70" fill="#8f8c60" opacity="0.22" />
+  <circle cx="200" cy="160" r="90" fill="#5a4a2a" opacity="0.14" />
+</svg>
