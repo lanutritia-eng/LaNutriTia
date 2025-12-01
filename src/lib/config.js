@@ -5,6 +5,7 @@ export const BRAND = {
   tiktok: "https://www.tiktok.com/@lanutritiaa",
   whatsapp: "https://wa.me/525570483984",
   setmore: "https://marcogalindo.setmore.com/",
+  setmoreReviews: "https://marcogalindo.setmore.com/reviews",
   patreon: {
     profile: "https://patreon.com/LaNutriTia",
     tiers: {

@@ -94,6 +94,7 @@ export default function Page(){
             <span className="sr-only">La Nutri Tía</span>
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
+            <a href="#reseñas" className="hover:text-brand">Reseñas</a>
             <a href="#servicios" className="hover:text-brand">Servicios</a>
             <a href="#planes" className="hover:text-brand">Planes</a>
             <a href="#social" className="hover:text-brand">Instagram / TikTok</a>
@@ -201,6 +202,57 @@ export default function Page(){
           <Stat value="3" label="Años de servicio" />
           <Stat value="4.9/5" label="Satisfacción" />
           <Stat value=">15kg" label="Promedio perdido en 6m" />
+        </div>
+      </Section>
+
+      {/* Reseñas Setmore */}
+      <Section
+        id="reseñas"
+        eyebrow="Reseñas"
+        title="Lo que dicen mis pacientes"
+        subtitle="Opiniones verificadas desde mi perfil de Setmore."
+      >
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-6 items-stretch">
+          <div className="card h-full">
+            <CardHeader>
+              <CardTitle className="text-lg">Reseñas en vivo</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="rounded-2xl border bg-white shadow-sm overflow-hidden h-[520px]">
+                <iframe
+                  title="Reseñas de Setmore"
+                  src={BRAND.setmoreReviews}
+                  className="w-full h-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <p className="text-xs text-[hsl(var(--muted))] mt-3">
+                Si no ves el panel, abre las reseñas directamente en Setmore:
+                <a className="text-brand underline ml-1" href={BRAND.setmoreReviews} target="_blank" rel="noreferrer">{BRAND.setmoreReviews}</a>.
+              </p>
+            </CardContent>
+          </div>
+
+          <div className="card bg-soft border-none h-full">
+            <CardHeader>
+              <CardTitle className="text-lg">¿Por qué funciona?</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-ink">
+              {["Seguimiento semanal que evita que te estanques", "Planes realistas con ingredientes de la milpa y tu presupuesto", "Educación sin culpas para comer rico y cuidar tu salud hormonal", "Herramientas para ansiedad, atracones y consistencia"]
+                .map((item, idx)=> (
+                  <div key={idx} className="flex items-start gap-3">
+                    <Check className="h-4 w-4 text-brand mt-0.5" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              <div className="pt-2">
+                <Button asChild className="w-full">
+                  <a href={BRAND.setmore}>Agenda una cita</a>
+                </Button>
+              </div>
+            </CardContent>
+          </div>
         </div>
       </Section>
 
