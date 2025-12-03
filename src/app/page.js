@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { BRAND } from "@/lib/config";
+import { Check, ChefHat, HeartPulse, Apple, PlayCircle, Instagram, Youtube, Mail, Phone, Calendar, Salad, MessagesSquare, ShieldCheck, Flame, Syringe, Sparkles, UserRoundCheck, Target } from "lucide-react";
 import { Check, ChefHat, HeartPulse, Apple, PlayCircle, Instagram, Youtube, Mail, Phone, Calendar, Salad, MessagesSquare, ShieldCheck, Flame, Syringe, MessageCircle, Sparkles, UserRoundCheck, Target } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
@@ -84,6 +85,13 @@ function Stat({ value, label }){
 }
 
 export default function Page(){
+  const heroImages = (BRAND.heroImages?.length ? BRAND.heroImages : [
+    "/hero/1.svg",
+    "/hero/2.svg",
+    "/hero/3.svg",
+    "/hero/4.svg",
+  ]).slice(0, 4);
+
   return (
     <div className="min-h-screen">
       {/* Navbar */}
@@ -97,7 +105,7 @@ export default function Page(){
             <a href="#reseñas" className="hover:text-brand">Reseñas</a>
             <a href="#servicios" className="hover:text-brand">Servicios</a>
             <a href="#planes" className="hover:text-brand">Planes</a>
-            <a href="#social" className="hover:text-brand">Instagram / TikTok</a>
+            <a href="#social" className="hover:text-brand">Instagram</a>
             <a href="#agenda" className="hover:text-brand">Agenda</a>
             <a href="#faq" className="hover:text-brand">FAQ</a>
           </nav>
@@ -194,6 +202,25 @@ export default function Page(){
           </motion.div>
         </div>
       </section>
+
+      <div className="container pb-12">
+        <div className="rounded-3xl border bg-white/80 shadow-sm p-4 md:p-6">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-xs uppercase tracking-widest text-brand">Galería</p>
+              <h3 className="text-xl font-semibold text-ink">Muestra visual (4 espacios)</h3>
+              <p className="text-sm text-[hsl(var(--muted))]">Reemplaza los archivos en <code>/public/hero/1-4</code> o edita <code>BRAND.heroImages</code> en <code>src/lib/config.js</code>.</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-4">
+            {heroImages.map((src, idx)=> (
+              <div key={idx} className="rounded-2xl border bg-white overflow-hidden shadow-sm">
+                <img src={src} alt={`Galería hero ${idx + 1}`} className="w-full h-full object-cover aspect-square" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Trust + Stats */}
       <Section id="confianza" eyebrow="Confianza" title="Resultados que hablan" subtitle="Metodología clara, hábitos sostenibles y cero culpas.">
@@ -375,46 +402,24 @@ export default function Page(){
         </div>
       </Section>
 
-      {/* Social (Instagram / TikTok) */}
-      <Section id="social" eyebrow="Redes" title="Sígueme en Instagram y TikTok" subtitle="Contenido diario, recetas y tips sin culpas.">
-        <div className="grid md:grid-cols-2 gap-6 items-start">
-          <div className="card">
-            <CardHeader><CardTitle className="flex items-center gap-2"><Instagram className="h-5 w-5 text-brand" /> Instagram</CardTitle></CardHeader>
-            <CardContent>
-              <p className="text-sm text-slate-600">Perfil: <a className="text-brand underline" href={BRAND.instagram} target="_blank" rel="noreferrer">@lanutritia</a></p>
-              <div className="grid md:grid-cols-2 gap-4 mt-4">
-                {BRAND.instagramEmbeds.length === 0 && (
-                  <div className="text-sm text-slate-600 col-span-2">
-                    Para mostrar posts aquí, agrega URLs de publicaciones en <code>src/lib/config.js</code> → <code>instagramEmbeds</code>.
-                  </div>
-                )}
-                {BRAND.instagramEmbeds.map((url, i)=> (
-                  <blockquote key={i} className="instagram-media" data-instgrm-permalink={url} data-instgrm-version="14" style={{ background:'#FFF', border:0, borderRadius:12, boxShadow:'0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15)', margin:'1px', maxWidth:'540px', minWidth:'326px', padding:0, width:'100%' }}></blockquote>
-                ))}
-              </div>
-              <Script src="https://www.instagram.com/embed.js" strategy="afterInteractive" />
-            </CardContent>
-          </div>
-
-          <div className="card">
-            <CardHeader><CardTitle className="flex items-center gap-2"><MessageCircle className="h-5 w-5 text-brand" /> TikTok</CardTitle></CardHeader>
-            <CardContent>
-              <p className="text-sm text-slate-600">Perfil: <a className="text-brand underline" href={BRAND.tiktok} target="_blank" rel="noreferrer">@lanutriitia</a></p>
-              <div className="grid md:grid-cols-2 gap-4 mt-4">
-                {BRAND.tiktokEmbeds.length === 0 && (
-                  <div className="text-sm text-slate-600 col-span-2">
-                    Para embeber videos, pega URLs en <code>src/lib/config.js</code> → <code>tiktokEmbeds</code>. (TikTok solo permite embed de videos individuales.)
-                  </div>
-                )}
-                {BRAND.tiktokEmbeds.map((url, i)=> (
-                  <blockquote key={i} className="tiktok-embed" cite={url} data-video-id="" style={{ maxWidth:'605px', minWidth:'325px' }}>
-                    <section><a target="_blank" href={url}>Ver en TikTok</a></section>
-                  </blockquote>
-                ))}
-              </div>
-              <Script async src="https://www.tiktok.com/embed.js" strategy="afterInteractive" />
-            </CardContent>
-          </div>
+      {/* Social (solo Instagram) */}
+      <Section id="social" eyebrow="Redes" title="Sígueme en Instagram" subtitle="Contenido diario, recetas y tips sin culpas.">
+        <div className="card">
+          <CardHeader><CardTitle className="flex items-center gap-2"><Instagram className="h-5 w-5 text-brand" /> Instagram</CardTitle></CardHeader>
+          <CardContent>
+            <p className="text-sm text-slate-600">Perfil: <a className="text-brand underline" href={BRAND.instagram} target="_blank" rel="noreferrer">@lanutritia</a></p>
+            <div className="grid md:grid-cols-2 gap-4 mt-4">
+              {BRAND.instagramEmbeds.length === 0 && (
+                <div className="text-sm text-slate-600 col-span-2">
+                  Para mostrar posts aquí, agrega URLs de publicaciones en <code>src/lib/config.js</code> → <code>instagramEmbeds</code>.
+                </div>
+              )}
+              {BRAND.instagramEmbeds.map((url, i)=> (
+                <blockquote key={i} className="instagram-media" data-instgrm-permalink={url} data-instgrm-version="14" style={{ background:'#FFF', border:0, borderRadius:12, boxShadow:'0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15)', margin:'1px', maxWidth:'540px', minWidth:'326px', padding:0, width:'100%' }}></blockquote>
+              ))}
+            </div>
+            <Script src="https://www.instagram.com/embed.js" strategy="afterInteractive" />
+          </CardContent>
         </div>
       </Section>
 
@@ -561,7 +566,7 @@ export default function Page(){
             <ul className="mt-3 space-y-2 text-sm">
               <li><a href="#servicios">Servicios</a></li>
               <li><a href="#planes">Planes</a></li>
-              <li><a href="#social">Instagram / TikTok</a></li>
+              <li><a href="#social">Instagram</a></li>
               <li><a href="#agenda">Agenda</a></li>
               <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -579,7 +584,6 @@ export default function Page(){
             <p>© {new Date().getFullYear()} La Nutri Tía. Todos los derechos reservados.</p>
             <div className="flex items-center gap-3">
               <a href={BRAND.instagram} className="hover:underline">Instagram</a>
-              <a href={BRAND.tiktok} className="hover:underline">TikTok</a>
             </div>
           </div>
         </div>

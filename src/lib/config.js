@@ -2,7 +2,6 @@ export const BRAND = {
   name: "La Nutri Tía",
   email: "lanutritia@gmail.com",
   instagram: "https://instagram.com/lanutritia",
-  tiktok: "https://www.tiktok.com/@lanutritiaa",
   whatsapp: "https://wa.me/525570483984",
   setmore: "https://marcogalindo.setmore.com/",
   setmoreReviews: "https://marcogalindo.setmore.com/reviews",
@@ -21,6 +20,12 @@ export const BRAND = {
     headline: "Acompañamiento personalizado que sí cabe en tu vida",
     cta: { label: "Agendar ahora", href: "https://marcogalindo.setmore.com/" }
   },
+  heroImages: [
+    "/hero/1.svg",
+    "/hero/2.svg",
+    "/hero/3.svg",
+    "/hero/4.svg",
+  ],
   plans: {
     singles: [
       { name: "Consulta Online", price: 550, desc: "Videollamada 45 min + plan personalizado" },
@@ -37,8 +42,6 @@ export const BRAND = {
     "https://www.instagram.com/p/DQsrp-BDE8f/"
   ],
   instagramFeedIframeSrc: "",
-  tiktokFeedIframeSrc: "",
-  tiktokEmbeds: [],
   posts: [
     {
       title: "Ayuno: lo bueno y lo malo",
