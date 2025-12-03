@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { BRAND } from "@/lib/config";
 import { Check, ChefHat, HeartPulse, Apple, PlayCircle, Instagram, Youtube, Mail, Phone, Calendar, Salad, MessagesSquare, ShieldCheck, Flame, Syringe, Sparkles, UserRoundCheck, Target } from "lucide-react";
+import { Check, ChefHat, HeartPulse, Apple, PlayCircle, Instagram, Youtube, Mail, Phone, Calendar, Salad, MessagesSquare, ShieldCheck, Flame, Syringe, MessageCircle, Sparkles, UserRoundCheck, Target } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
 
