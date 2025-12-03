@@ -27,7 +27,7 @@ export const BRAND = {
     ],
     cta: { label: "Agendar ahora", href: "https://marcogalindo.setmore.com/" },
   },
-  heroImages: ["/hero/1.svg", "/hero/2.svg", "/hero/3.svg", "/hero/4.svg"],
+  heroImages: ["/hero/1.png", "/hero/2.png", "/hero/3.png", "/hero/4.png"],
   featureFlags: {
     altHero: false,
   },

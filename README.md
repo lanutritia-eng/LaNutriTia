@@ -22,7 +22,7 @@ Edita `src/lib/config.js` para cambiar:
 - posts de Instagram a embeber (opcional)
 
 ### Imágenes del hero (hero 1, hero 2, hero 3 y hero 4)
-1) Reemplaza los archivos en `public/hero/1.svg`, `2.svg`, `3.svg` y `4.svg` con tus ilustraciones o fotos (ideal 1200×736 px). Si usas PNG/JPG, actualiza las extensiones en `src/lib/config.js`.
+1) Reemplaza los archivos en `public/hero/1.png`, `2.png`, `3.png` y `4.png` con tus ilustraciones o fotos (ideal 1200×736 px). Si usas otro formato, actualiza las extensiones en `src/lib/config.js`.
 2) Si usas otros nombres o cantidades, actualiza el arreglo `hero.images` en `src/lib/config.js` para que apunten a las nuevas rutas.
 3) Las imágenes se mostrarán en los carruseles del hero y del bloque "Acompañamiento realista".
 
