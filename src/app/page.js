@@ -669,7 +669,7 @@ export default function Page() {
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/70 border-b">
         <div className="container h-16 flex items-center justify-between">
           <a href="/" className="inline-flex items-center gap-2">
-            <img src="/logo.svg" alt="La Nutri Tía" className="h-7 w-auto" />
+            <img src="/logo.png" alt="La Nutri Tía" className="h-7 w-auto" />
             <span className="sr-only">La Nutri Tía</span>
           </a>
           <nav className="hidden md:flex items-center gap-4 text-sm">
@@ -856,7 +856,7 @@ export default function Page() {
         <div className="container py-12 grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <a href="/" className="inline-flex items-center gap-2">
-              <img src="/logo.svg" alt="La Nutri Tía" className="h-7 w-auto" />
+              <img src="/logo.png" alt="La Nutri Tía" className="h-7 w-auto" />
               <span className="sr-only">La Nutri Tía</span>
             </a>
             <p className="mt-3 text-sm text-slate-600 max-w-md">Nutrición holística, sin culpas y con resultados reales. Planes personalizados, recetarios y una comunidad que te acompaña.</p>
