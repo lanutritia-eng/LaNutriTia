@@ -639,7 +639,7 @@ export default function Page() {
     { value: ">15kg", label: "Promedio perdido en 6m" },
   ];
 
-  const heroImages = (BRAND.heroImages?.length ? BRAND.heroImages : ["/hero/1.svg", "/hero/2.svg", "/hero/3.svg", "/hero/4.svg"]).slice(0, 4);
+  const heroImages = (BRAND.heroImages?.length ? BRAND.heroImages : ["/hero/1.png", "/hero/2.png", "/hero/3.png", "/hero/4.png"]).slice(0, 4);
 
   return (
     <div className="min-h-screen" data-active={activeSection}>
