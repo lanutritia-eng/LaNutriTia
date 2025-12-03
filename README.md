@@ -13,10 +13,11 @@ npm run dev
 
 ## Configuración rápida
 Edita `src/lib/config.js` para cambiar:
-- textos del hero y CTA
-- enlaces (Instagram, TikTok, WhatsApp, Setmore, email)
+- textos del hero, CTA y las 4 imágenes de la galería (`heroImages`)
+- enlaces (Instagram, WhatsApp, Setmore, email)
+- reseñas de Setmore (iframe público)
 - planes y precios
-- posts de Instagram/TikTok a embeber (opcional)
+- posts de Instagram a embeber (opcional)
 
 ## Setmore
 Puedes usar el link directo (ya está). Si quieres el botón/widget oficial, pega el snippet que te da Setmore dentro de la sección "Agenda".

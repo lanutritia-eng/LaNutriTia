@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { BRAND } from "@/lib/config";
-import { Check, ChefHat, HeartPulse, Apple, PlayCircle, Instagram, Youtube, Mail, Phone, Calendar, Salad, MessagesSquare, ShieldCheck, Flame, Syringe, MessageCircle } from "lucide-react";
+import { Check, ChefHat, HeartPulse, Apple, PlayCircle, Instagram, Youtube, Mail, Phone, Calendar, Salad, MessagesSquare, ShieldCheck, Flame, Syringe, Sparkles, UserRoundCheck, Target } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
 
@@ -35,7 +35,7 @@ function Feature({ Icon, title, desc }){
     <div className="card">
       <CardHeader>
         <div className="flex items-center gap-3">
-          <div className="p-3 rounded-2xl bg-indigo-50"><Icon className="h-6 w-6 text-brand" /></div>
+          <div className="p-3 rounded-2xl bg-[#f4e9d2]"><Icon className="h-6 w-6 text-brand" /></div>
           <CardTitle className="text-lg">{title}</CardTitle>
         </div>
       </CardHeader>
@@ -84,6 +84,13 @@ function Stat({ value, label }){
 }
 
 export default function Page(){
+  const heroImages = (BRAND.heroImages?.length ? BRAND.heroImages : [
+    "/hero/1.svg",
+    "/hero/2.svg",
+    "/hero/3.svg",
+    "/hero/4.svg",
+  ]).slice(0, 4);
+
   return (
     <div className="min-h-screen">
       {/* Navbar */}
@@ -94,9 +101,10 @@ export default function Page(){
             <span className="sr-only">La Nutri Tía</span>
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
+            <a href="#reseñas" className="hover:text-brand">Reseñas</a>
             <a href="#servicios" className="hover:text-brand">Servicios</a>
             <a href="#planes" className="hover:text-brand">Planes</a>
-            <a href="#social" className="hover:text-brand">Instagram / TikTok</a>
+            <a href="#social" className="hover:text-brand">Instagram</a>
             <a href="#agenda" className="hover:text-brand">Agenda</a>
             <a href="#faq" className="hover:text-brand">FAQ</a>
           </nav>
@@ -113,68 +121,105 @@ export default function Page(){
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="absolute -top-24 -right-24 bg-indigo-200/40 h-72 w-72 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 bg-fuchsia-200/35 h-72 w-72 rounded-full blur-3xl" />
-        <div className="container py-16 md:py-28 grid md:grid-cols-2 gap-10 items-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+        <div className="absolute -top-20 -right-24 bg-[#c9c2a2]/50 h-64 w-64 rounded-full blur-3xl" />
+        <div className="absolute -bottom-16 -left-24 bg-[#8f8c60]/30 h-64 w-64 rounded-full blur-3xl" />
+        <div className="container py-16 md:py-24 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center relative">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-white border px-3 py-1 text-xs text-brand">
               <ShieldCheck className="h-4 w-4" /> Nutrición holística y sin culpas
             </div>
-            <h1 className="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">
-              {BRAND.hero.headline}
-            </h1>
-            <p className="mt-4 text-lg text-[hsl(var(--muted))] max-w-xl">
-              Soy Marco, tu Nutri Tía. Te acompaño con planes sencillos, recetas deliciosas y hábitos reales para resultados sostenibles.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button asChild href={BRAND.hero.cta.href}><span>{BRAND.hero.cta.label}</span></Button>
-              <Button variant="outline" asChild href="#social"><span className="flex items-center"><PlayCircle className="h-4 w-4 mr-2" />Ver mis contenidos</span></Button>
+            <div className="space-y-3">
+              <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+                {BRAND.hero.headline}
+              </h1>
+              <p className="text-lg text-[hsl(var(--muted))] max-w-2xl">
+                Soy Marco (“La Nutri Tía”), nutriólogo clínico y creador de contenido. Diseño planes realistas, recetas ricas y un seguimiento cercano para que bajes grasa, cuides tu salud hormonal y mejores tu relación con la comida.
+              </p>
             </div>
-            <div className="mt-6 flex items-center gap-6">
-              <div className="flex -space-x-3">
-                {[...Array(5)].map((_,i)=> (<div key={i} className="h-10 w-10 rounded-full ring-2 ring-white bg-indigo-200" />))}
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="flex items-start gap-3">
+                <div className="p-2 rounded-xl bg-[#f4e9d2]"><Sparkles className="h-4 w-4 text-brand" /></div>
+                <div>
+                  <p className="font-semibold text-ink">Planes hechos a medida</p>
+                  <p className="text-sm text-[hsl(var(--muted))]">5 tiempos, esferas por color y menús adaptados a tus metas y gustos.</p>
+                </div>
               </div>
-              <p className="text-sm text-[hsl(var(--muted))]">+2,000 pacientes acompañados | 4.9/5 satisfacción</p>
+              <div className="flex items-start gap-3">
+                <div className="p-2 rounded-xl bg-[#f4e9d2]"><UserRoundCheck className="h-4 w-4 text-brand" /></div>
+                <div>
+                  <p className="font-semibold text-ink">Seguimiento cercano</p>
+                  <p className="text-sm text-[hsl(var(--muted))]">Mensajes semanales, ajustes según progreso y educación sin culpas.</p>
+                </div>
+              </div>
             </div>
-
-            <div className="mt-6 flex gap-3 overflow-x-auto snap-x snap-mandatory no-scrollbar py-2">
-              {(BRAND.hero.images || []).slice(0,5).map((src, i)=>(
-                <img key={i} src={src} alt="" className="h-44 w-72 object-cover rounded-2xl snap-start shrink-0" />
-              ))}
+            <div className="flex flex-wrap gap-3">
+              <Button asChild href={BRAND.hero.cta.href}><span>{BRAND.hero.cta.label}</span></Button>
+              <Button variant="outline" asChild href="#servicios"><span className="flex items-center"><PlayCircle className="h-4 w-4 mr-2" />Ver cómo trabajo</span></Button>
+            </div>
+            <div className="flex flex-wrap items-center gap-4 text-sm text-[hsl(var(--muted))]">
+              <div className="flex items-center gap-2"><div className="h-2.5 w-2.5 rounded-full bg-brand" /> +2,000 pacientes acompañados</div>
+              <div className="flex items-center gap-2"><div className="h-2.5 w-2.5 rounded-full bg-[#8f8c60]" /> 4.9/5 satisfacción</div>
+              <div className="flex items-center gap-2"><div className="h-2.5 w-2.5 rounded-full bg-[#5a4a2a]" /> Enfoque inclusivo y clínico</div>
             </div>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="relative">
-            <div className="aspect-[4/5] rounded-3xl bg-white shadow-2xl p-4 border">
-              <div className="h-full w-full rounded-2xl bg-gradient-to-br from-indigo-100 via-violet-100 to-fuchsia-100 grid place-items-center text-indigo-900">
-                <div className="text-center px-6">
-                  <p className="text-sm uppercase tracking-widest">La Nutri Tía</p>
-                  <h3 className="text-2xl font-bold mt-1">Menos regaños, más resultados</h3>
-                  <p className="text-sm text-indigo-800/80 mt-2">Plan de 5 tiempos, esferas por color, recetas de la milpa y acompañamiento realista.</p>
+            <div className="rounded-3xl bg-white shadow-2xl border p-6 space-y-4">
+              <div className="rounded-2xl bg-gradient-to-br from-[#f4e9d2] via-[#c9c2a2] to-[#8f8c60] p-6 text-ink">
+                <p className="text-sm uppercase tracking-widest">Sobre mí</p>
+                <h3 className="text-2xl font-bold mt-1">Marco · La Nutri Tía</h3>
+                <p className="text-sm text-[hsl(var(--muted))] mt-2">Nutriólogo clínico, divulgador y acompañante respetuoso. Trabajo con pacientes trans, salud hormonal, pérdida de grasa y bienestar sin dietas punitivas.</p>
+              </div>
+              <div className="space-y-3">
+                {["Lic. en Nutrición clínica", "Especialista en terapia hormonal y composición corporal", "Recetas económicas con ingredientes de la milpa", "Educación alimentaria sin juicios"].map((item, idx)=>(
+                  <div key={idx} className="flex items-start gap-3 text-sm text-ink">
+                    <Check className="h-4 w-4 text-brand mt-0.5" /> {item}
+                  </div>
+                ))}
+              </div>
+              <div className="grid sm:grid-cols-2 gap-3">
+                <div className="rounded-2xl border p-3 flex items-start gap-3">
+                  <Target className="h-4 w-4 text-brand mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold">Resultados sostenibles</p>
+                    <p className="text-xs text-[hsl(var(--muted))]">Sin regaños, con métricas claras y ajustes constantes.</p>
+                  </div>
+                </div>
+                <div className="rounded-2xl border p-3 flex items-start gap-3">
+                  <HeartPulse className="h-4 w-4 text-brand mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold">Salud primero</p>
+                    <p className="text-xs text-[hsl(var(--muted))]">Glucosa, lípidos, IMC, TMB y grasa visceral bajo control.</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="absolute -bottom-6 -left-6 card">
-              <CardContent className="p-4 flex items-center gap-3">
-                <Flame className="h-5 w-5 text-brand" />
-                <div>
-                  <p className="text-sm font-semibold leading-tight">Baja grasa corporal</p>
-                  <p className="text-xs text-[hsl(var(--muted))] -mt-0.5">sin perder músculo</p>
-                </div>
-              </CardContent>
-            </div>
-            <div className="absolute -top-6 -right-6 card">
-              <CardContent className="p-4 flex items-center gap-3">
-                <HeartPulse className="h-5 w-5 text-brand" />
-                <div>
-                  <p className="text-sm font-semibold leading-tight">Enfoque clínico</p>
-                  <p className="text-xs text-[hsl(var(--muted))] -mt-0.5">IMC, TMB, grasa visceral</p>
-                </div>
-              </CardContent>
+              <div className="flex flex-wrap gap-2 text-sm text-[hsl(var(--muted))]">
+                <a href={BRAND.whatsapp} className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-[#f4e9d2] text-ink"><MessagesSquare className="h-4 w-4" /> Enviarme mensaje</a>
+                <a href={`mailto:${BRAND.email}`} className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white border text-ink"><Mail className="h-4 w-4" /> Escríbeme por correo</a>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
+
+      <div className="container pb-12">
+        <div className="rounded-3xl border bg-white/80 shadow-sm p-4 md:p-6">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-xs uppercase tracking-widest text-brand">Galería</p>
+              <h3 className="text-xl font-semibold text-ink">Muestra visual (4 espacios)</h3>
+              <p className="text-sm text-[hsl(var(--muted))]">Reemplaza los archivos en <code>/public/hero/1-4</code> o edita <code>BRAND.heroImages</code> en <code>src/lib/config.js</code>.</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-4">
+            {heroImages.map((src, idx)=> (
+              <div key={idx} className="rounded-2xl border bg-white overflow-hidden shadow-sm">
+                <img src={src} alt={`Galería hero ${idx + 1}`} className="w-full h-full object-cover aspect-square" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Trust + Stats */}
       <Section id="confianza" eyebrow="Confianza" title="Resultados que hablan" subtitle="Metodología clara, hábitos sostenibles y cero culpas.">
@@ -183,6 +228,57 @@ export default function Page(){
           <Stat value="3" label="Años de servicio" />
           <Stat value="4.9/5" label="Satisfacción" />
           <Stat value=">15kg" label="Promedio perdido en 6m" />
+        </div>
+      </Section>
+
+      {/* Reseñas Setmore */}
+      <Section
+        id="reseñas"
+        eyebrow="Reseñas"
+        title="Lo que dicen mis pacientes"
+        subtitle="Opiniones verificadas desde mi perfil de Setmore."
+      >
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-6 items-stretch">
+          <div className="card h-full">
+            <CardHeader>
+              <CardTitle className="text-lg">Reseñas en vivo</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="rounded-2xl border bg-white shadow-sm overflow-hidden h-[520px]">
+                <iframe
+                  title="Reseñas de Setmore"
+                  src={BRAND.setmoreReviews}
+                  className="w-full h-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <p className="text-xs text-[hsl(var(--muted))] mt-3">
+                Si no ves el panel, abre las reseñas directamente en Setmore:
+                <a className="text-brand underline ml-1" href={BRAND.setmoreReviews} target="_blank" rel="noreferrer">{BRAND.setmoreReviews}</a>.
+              </p>
+            </CardContent>
+          </div>
+
+          <div className="card bg-soft border-none h-full">
+            <CardHeader>
+              <CardTitle className="text-lg">¿Por qué funciona?</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-ink">
+              {["Seguimiento semanal que evita que te estanques", "Planes realistas con ingredientes de la milpa y tu presupuesto", "Educación sin culpas para comer rico y cuidar tu salud hormonal", "Herramientas para ansiedad, atracones y consistencia"]
+                .map((item, idx)=> (
+                  <div key={idx} className="flex items-start gap-3">
+                    <Check className="h-4 w-4 text-brand mt-0.5" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              <div className="pt-2">
+                <Button asChild className="w-full">
+                  <a href={BRAND.setmore}>Agenda una cita</a>
+                </Button>
+              </div>
+            </CardContent>
+          </div>
         </div>
       </Section>
 
@@ -202,18 +298,32 @@ export default function Page(){
 
       <div className="container py-12">
         <section className="bg-soft py-10 px-6 md:px-10 rounded-3xl">
-          <div className="grid md:grid-cols-2 gap-6 items-center">
-            <div>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-3">
               <h2 className="text-2xl font-bold text-ink">Acompañamiento realista</h2>
-              <p className="text-slate-600 mt-2">Menos regaños, más resultados. Plan de cinco tiempos, esferas por color y recetas de la milpa.</p>
-              <div className="mt-5">
-                <Button asChild><a href={BRAND.setmore}>Agendar ahora</a></Button>
+              <p className="text-slate-600">Sin dietas extremas ni regaños: te llevo paso a paso con menús claros, recetas fáciles y un seguimiento que se ajusta a tu ritmo.</p>
+              <div className="grid sm:grid-cols-2 gap-3 text-sm text-ink">
+                {["Menú de 5 tiempos con equivalentes", "Opciones económicas y de la milpa", "Material descargable y guías rápidas", "Mensajes y ajustes semanales"].map((item,i)=>(
+                  <div key={i} className="rounded-2xl border bg-white p-4 flex items-start gap-3">
+                    <Check className="h-4 w-4 text-brand mt-0.5" /> {item}
+                  </div>
+                ))}
               </div>
+              <div className="mt-2 text-sm text-[hsl(var(--muted))]">Ideal para pérdida de grasa, recomposición, salud hormonal, pacientes trans y quien busca comer rico sin culpa.</div>
             </div>
-            <div className="grid grid-cols-2 gap-3">
-              {(BRAND.hero.images || []).slice(0,4).map((src,i)=>(
-                <img key={i} src={src} alt="" className="rounded-2xl object-cover h-40 w-full" />
-              ))}
+            <div className="space-y-4">
+              <div className="rounded-2xl border bg-white p-5 shadow-sm">
+                <p className="text-xs uppercase tracking-widest text-brand">Convéncete en 3 pasos</p>
+                <ul className="mt-3 space-y-2 text-sm text-ink">
+                  <li className="flex items-start gap-3"><Flame className="h-4 w-4 text-brand mt-0.5" /> Revisión de hábitos, tiempos y métricas clave.</li>
+                  <li className="flex items-start gap-3"><HeartPulse className="h-4 w-4 text-brand mt-0.5" /> Plan inicial con objetivos medibles a 4 semanas.</li>
+                  <li className="flex items-start gap-3"><MessagesSquare className="h-4 w-4 text-brand mt-0.5" /> Ajustes semanales y material práctico para que no te quedes sin ideas.</li>
+                </ul>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild><a href={BRAND.setmore}>Agenda tu primera consulta</a></Button>
+                <Button variant="outline" asChild href={BRAND.whatsapp}><span className="flex items-center"><Phone className="h-4 w-4 mr-2" />Resolver dudas</span></Button>
+              </div>
             </div>
           </div>
         </section>
@@ -291,46 +401,24 @@ export default function Page(){
         </div>
       </Section>
 
-      {/* Social (Instagram / TikTok) */}
-      <Section id="social" eyebrow="Redes" title="Sígueme en Instagram y TikTok" subtitle="Contenido diario, recetas y tips sin culpas.">
-        <div className="grid md:grid-cols-2 gap-6 items-start">
-          <div className="card">
-            <CardHeader><CardTitle className="flex items-center gap-2"><Instagram className="h-5 w-5 text-brand" /> Instagram</CardTitle></CardHeader>
-            <CardContent>
-              <p className="text-sm text-slate-600">Perfil: <a className="text-brand underline" href={BRAND.instagram} target="_blank" rel="noreferrer">@lanutritia</a></p>
-              <div className="grid md:grid-cols-2 gap-4 mt-4">
-                {BRAND.instagramEmbeds.length === 0 && (
-                  <div className="text-sm text-slate-600 col-span-2">
-                    Para mostrar posts aquí, agrega URLs de publicaciones en <code>src/lib/config.js</code> → <code>instagramEmbeds</code>.
-                  </div>
-                )}
-                {BRAND.instagramEmbeds.map((url, i)=> (
-                  <blockquote key={i} className="instagram-media" data-instgrm-permalink={url} data-instgrm-version="14" style={{ background:'#FFF', border:0, borderRadius:12, boxShadow:'0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15)', margin:'1px', maxWidth:'540px', minWidth:'326px', padding:0, width:'100%' }}></blockquote>
-                ))}
-              </div>
-              <Script src="https://www.instagram.com/embed.js" strategy="afterInteractive" />
-            </CardContent>
-          </div>
-
-          <div className="card">
-            <CardHeader><CardTitle className="flex items-center gap-2"><MessageCircle className="h-5 w-5 text-brand" /> TikTok</CardTitle></CardHeader>
-            <CardContent>
-              <p className="text-sm text-slate-600">Perfil: <a className="text-brand underline" href={BRAND.tiktok} target="_blank" rel="noreferrer">@lanutriitia</a></p>
-              <div className="grid md:grid-cols-2 gap-4 mt-4">
-                {BRAND.tiktokEmbeds.length === 0 && (
-                  <div className="text-sm text-slate-600 col-span-2">
-                    Para embeber videos, pega URLs en <code>src/lib/config.js</code> → <code>tiktokEmbeds</code>. (TikTok solo permite embed de videos individuales.)
-                  </div>
-                )}
-                {BRAND.tiktokEmbeds.map((url, i)=> (
-                  <blockquote key={i} className="tiktok-embed" cite={url} data-video-id="" style={{ maxWidth:'605px', minWidth:'325px' }}>
-                    <section><a target="_blank" href={url}>Ver en TikTok</a></section>
-                  </blockquote>
-                ))}
-              </div>
-              <Script async src="https://www.tiktok.com/embed.js" strategy="afterInteractive" />
-            </CardContent>
-          </div>
+      {/* Social (solo Instagram) */}
+      <Section id="social" eyebrow="Redes" title="Sígueme en Instagram" subtitle="Contenido diario, recetas y tips sin culpas.">
+        <div className="card">
+          <CardHeader><CardTitle className="flex items-center gap-2"><Instagram className="h-5 w-5 text-brand" /> Instagram</CardTitle></CardHeader>
+          <CardContent>
+            <p className="text-sm text-slate-600">Perfil: <a className="text-brand underline" href={BRAND.instagram} target="_blank" rel="noreferrer">@lanutritia</a></p>
+            <div className="grid md:grid-cols-2 gap-4 mt-4">
+              {BRAND.instagramEmbeds.length === 0 && (
+                <div className="text-sm text-slate-600 col-span-2">
+                  Para mostrar posts aquí, agrega URLs de publicaciones en <code>src/lib/config.js</code> → <code>instagramEmbeds</code>.
+                </div>
+              )}
+              {BRAND.instagramEmbeds.map((url, i)=> (
+                <blockquote key={i} className="instagram-media" data-instgrm-permalink={url} data-instgrm-version="14" style={{ background:'#FFF', border:0, borderRadius:12, boxShadow:'0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15)', margin:'1px', maxWidth:'540px', minWidth:'326px', padding:0, width:'100%' }}></blockquote>
+              ))}
+            </div>
+            <Script src="https://www.instagram.com/embed.js" strategy="afterInteractive" />
+          </CardContent>
         </div>
       </Section>
 
@@ -454,10 +542,10 @@ export default function Page(){
             </div>
           </div>
         </div>
-        <div className="card border-indigo-200 bg-indigo-50 mt-6">
-          <CardContent className="p-6 text-sm text-indigo-950">
+        <div className="card border-[#c9c2a2] bg-[#f4e9d2] mt-6">
+          <CardContent className="p-6 text-sm text-ink">
             <p className="font-semibold">Aviso importante</p>
-            <p className="text-indigo-900/80 mt-1">La información proporcionada no sustituye la valoración médica. Si presentas una condición clínica específica, consulta a tu médico tratante.</p>
+            <p className="text-[hsl(var(--muted))] mt-1">La información proporcionada no sustituye la valoración médica. Si presentas una condición clínica específica, consulta a tu médico tratante.</p>
           </CardContent>
         </div>
       </Section>
@@ -477,7 +565,7 @@ export default function Page(){
             <ul className="mt-3 space-y-2 text-sm">
               <li><a href="#servicios">Servicios</a></li>
               <li><a href="#planes">Planes</a></li>
-              <li><a href="#social">Instagram / TikTok</a></li>
+              <li><a href="#social">Instagram</a></li>
               <li><a href="#agenda">Agenda</a></li>
               <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -495,7 +583,6 @@ export default function Page(){
             <p>© {new Date().getFullYear()} La Nutri Tía. Todos los derechos reservados.</p>
             <div className="flex items-center gap-3">
               <a href={BRAND.instagram} className="hover:underline">Instagram</a>
-              <a href={BRAND.tiktok} className="hover:underline">TikTok</a>
             </div>
           </div>
         </div>
