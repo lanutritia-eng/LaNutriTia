@@ -14,22 +14,28 @@ body {
   @apply rounded-2xl border border-[#c9c2a2]/50 bg-white shadow-sm;
 }
 .btn {
-  @apply inline-flex items-center justify-center rounded-2xl px-4 py-2 font-medium border;
+  @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
 }
 .btn-primary {
   @apply bg-brand text-white border-brand hover:bg-brand/90;
 }
-.btn-outline {
-  @apply bg-white text-slate-900 border-slate-200 hover:bg-slate-50;
+.btn-secondary {
+  @apply bg-white text-ink border-[#d6cbb0] hover:bg-[#f5eddb];
+}
+.btn-ghost {
+  @apply bg-transparent text-ink border-transparent hover:bg-white/60;
+}
+.btn-full {
+  @apply w-full;
 }
 .badge {
   @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold;
 }
 .input {
-  @apply w-full rounded-2xl border px-3 py-2;
+  @apply w-full rounded-xl border border-[#d6cbb0] bg-white px-3 py-2 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
 }
 .textarea {
-  @apply w-full rounded-2xl border px-3 py-2;
+  @apply w-full rounded-xl border border-[#d6cbb0] bg-white px-3 py-2 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
 }
 footer a:hover { text-decoration: underline; }
 .whatsapp-fab {
@@ -39,13 +45,13 @@ footer a:hover { text-decoration: underline; }
 
 @layer base {
 :root {
-  --radius: 1rem;
-  --brand: 40 36% 26%;       /* espresso terroso */
-  --brand-2: 56 20% 47%;     /* oliva ahumado */
-  --surface: 41 61% 89%;     /* marfil cálido */
+  --radius: 0.875rem;
+  --brand: 40 36% 26%;
+  --brand-2: 56 20% 47%;
+  --surface: 41 61% 89%;
   --surface-strong: 49 27% 71%;
-  --ink: 41 38% 17%;         /* texto principal */
-  --muted: 49 20% 38%;       /* texto secundario */
+  --ink: 41 38% 17%;
+  --muted: 49 20% 38%;
   --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-heading: "Playfair Display", "Georgia", serif;
 }
@@ -60,3 +66,15 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.01em;
 }
 
+a.skip-link {
+  @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg;
+  color: hsl(var(--ink));
+}
+
+:focus-visible {
+  outline-color: hsl(var(--brand));
+}
+
+.placeholder-skeleton {
+  @apply animate-pulse bg-[#e6dcc3] rounded-2xl;
+}

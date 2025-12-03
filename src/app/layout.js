@@ -1,12 +1,11 @@
 import "./globals.css";
-import { Manrope, Playfair_Display } from "next/font/google";
-
-const bodyFont = Manrope({ subsets: ["latin"], variable: "--font-body", weight: ["400", "500", "600", "700"] });
-const headingFont = Playfair_Display({ subsets: ["latin"], variable: "--font-heading", weight: ["600", "700", "800"] });
 export const metadata = {
   title: "La Nutri Tía | Nutrición holística sin culpas",
-  description: "Tu nutrición, sin regaños. Agenda hoy y da el primer paso.",
+  description: "Planes personalizados, recetarios y acompañamiento real para transformar tu salud y relación con la comida.",
   metadataBase: new URL("https://lanutritia.com"),
+  alternates: {
+    canonical: "https://lanutritia.com",
+  },
   openGraph: {
     title: "La Nutri Tía",
     description: "Come rico, baja de peso y transforma tu relación con la comida.",
@@ -16,11 +15,27 @@ export const metadata = {
     locale: "es_MX",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "La Nutri Tía",
+    description: "Nutrición holística y sin culpas.",
+    images: ["/og.png"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={`${bodyFont.variable} ${headingFont.variable}`}>{children}</body>
+      <body>
+        <a href="#contenido" className="skip-link">Saltar al contenido</a>
+        {children}
+      </body>
     </html>
   );
 }
