@@ -451,12 +451,12 @@ function LeadMagnet() {
     <section className="container py-16 md:py-20">
       <div className="card bg-gradient-to-r from-[#f4e9d2] to-[#e6dcc3]">
         <CardHeader>
-          <CardTitle className="text-3xl">Lead magnet: guías gratis</CardTitle>
+          <CardTitle className="text-4xl font-extrabold">Guías gratuitas</CardTitle>
         </CardHeader>
         <CardContent>
           <form className="grid md:grid-cols-[1.5fr_1fr] gap-4 items-center" onSubmit={submit}>
             <div className="space-y-3">
-              <p className="text-[hsl(var(--muted))]">Descarga la guía de café sin culpa, plato ideal o ayuno consciente.</p>
+              <p className="text-[hsl(var(--muted))]">Descarga la guía de café sin culpa, plato ideal, ayuno consciente o cuidados para pacientes trans y VIH.</p>
               <input type="text" name="hp" className="hidden" tabIndex="-1" autoComplete="off" />
               <Input
                 type="email"
@@ -475,6 +475,8 @@ function LeadMagnet() {
                 <option>Guía gratis: café sin culpa</option>
                 <option>Guía gratis: plato ideal</option>
                 <option>Guía gratis: ayuno consciente</option>
+                <option>Guía gratis: paciente trans</option>
+                <option>Guía gratis: paciente VIH</option>
               </select>
               {error && <p className="text-sm text-red-600">{error}</p>}
               {status === "success" && <p className="text-sm text-green-700">¡Listo! Revisa tu correo.</p>}
@@ -669,7 +671,7 @@ export default function Page() {
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/70 border-b">
         <div className="container h-16 flex items-center justify-between">
           <a href="/" className="inline-flex items-center gap-2">
-            <img src="/logo.png" alt="La Nutri Tía" className="h-7 w-auto" />
+            <img src="/logo.png" alt="La Nutri Tía" className="h-10 w-10 rounded-full border object-cover" />
             <span className="sr-only">La Nutri Tía</span>
           </a>
           <nav className="hidden md:flex items-center gap-4 text-sm">
@@ -705,13 +707,7 @@ export default function Page() {
 
         <section className="container pb-12">
           <div className="rounded-3xl border bg-white/80 shadow-sm p-4 md:p-6">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div>
-                <p className="text-xs uppercase tracking-widest text-brand">Galería</p>
-                <h3 className="text-xl font-semibold text-ink">Muestra visual</h3>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {heroImages.map((src, idx) => (
                 <div key={idx} className="rounded-2xl border bg-white overflow-hidden shadow-sm">
                   <img src={src} alt={`Galería hero ${idx + 1}`} className="w-full h-full object-cover aspect-square" loading="lazy" />
@@ -856,7 +852,7 @@ export default function Page() {
         <div className="container py-12 grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <a href="/" className="inline-flex items-center gap-2">
-              <img src="/logo.png" alt="La Nutri Tía" className="h-7 w-auto" />
+              <img src="/logo.png" alt="La Nutri Tía" className="h-10 w-10 rounded-full border object-cover" />
               <span className="sr-only">La Nutri Tía</span>
             </a>
             <p className="mt-3 text-sm text-slate-600 max-w-md">Nutrición holística, sin culpas y con resultados reales. Planes personalizados, recetarios y una comunidad que te acompaña.</p>
