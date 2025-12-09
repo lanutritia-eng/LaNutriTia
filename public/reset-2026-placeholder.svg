@@ -27,6 +27,15 @@
     <circle cx="620" cy="300" r="120" />
     <circle cx="360" cy="520" r="100" />
     <circle cx="860" cy="520" r="140" />
+  <text x="945" y="176" fill="#fff7ec" text-anchor="middle" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="600">Espacio para foto</text>
+  <g fill="#3c3523" text-anchor="middle" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif">
+    <text x="600" y="470" font-size="38" font-weight="800">Coloca la foto de La NutriTía o del servicio</text>
+    <text x="600" y="520" font-size="24" font-weight="600">Reemplaza este SVG por</text>
+    <text x="600" y="560" font-size="26" font-weight="800">reset-2026-placeholder.png</text>
+  </g>
+  <g fill="#4e4a34" opacity="0.85" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="600">
+    <text x="120" y="820">Carpeta: /public/reset-2026-placeholder</text>
+    <text x="120" y="852">Formato sugerido: PNG o la foto final</text>
   </g>
   <g transform="translate(72 110)" fill="#d7882f">
     <circle cx="0" cy="0" r="10" />
