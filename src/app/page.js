@@ -170,6 +170,9 @@ function ResetBanner({ onCTA }) {
                   Reemplaza el archivo public/reset-2026-placeholder.svg con tu foto o servicio; si prefieres PNG, usa el mismo nombre.
                 </figcaption>
               </figure>
+              <div className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-[#f4e9d2] via-[#efd9ae] to-[#d6e7c3] border border-[#d6cbb0] flex items-center justify-center text-center text-sm md:text-base text-[hsl(var(--muted))] font-semibold">
+                Espacio para foto de La NutriTía o del servicio
+              </div>
               <div className="text-center space-y-1">
                 <p className="text-base font-semibold text-ink">Paquete DÚO: 2 personas por 1,099 MXN</p>
                 <p className="text-xs text-[hsl(var(--muted))]">Válido pagando antes del 31 de diciembre</p>
