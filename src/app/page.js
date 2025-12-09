@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 import {
   Apple,
@@ -38,6 +39,7 @@ const SetmoreEmbed = dynamic(() => import("@/components/SetmoreEmbed"), {
 });
 
 const sections = [
+  { id: "reset-2026", label: "RESET 2026" },
   { id: "hero", label: "Inicio" },
   { id: "reseñas", label: "Reseñas" },
   { id: "como-funciona", label: "Cómo funciona" },
@@ -54,7 +56,7 @@ function trackEvent(name, payload = {}) {
 }
 
 function useActiveSection(ids) {
-  const [active, setActive] = useState("hero");
+  const [active, setActive] = useState(ids[0] ?? "hero");
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -71,6 +73,117 @@ function useActiveSection(ids) {
     return () => observer.disconnect();
   }, [ids]);
   return active;
+}
+
+function ResetBanner({ onCTA }) {
+  const bullets = [
+    "Consulta personalizada (online o presencial)",
+    "Menú 5 tiempos con esferas por color y equivalentes SMAE",
+    "Recetario fácil, económico y rico",
+    "Checklist imprimible de hábitos 2026",
+    "Broadcast privado de WhatsApp por 30 días",
+  ];
+
+  return (
+    <section
+      id="reset-2026"
+      className="relative overflow-hidden bg-gradient-to-br from-[#fff8ec] via-[#f3ebd2] to-[#e7f3e7] border-b border-[#e1d6b8]"
+    >
+      <div className="absolute inset-x-0 top-0 h-9 bg-[#d7882f] text-white text-center text-[11px] md:text-xs tracking-[0.18em] font-semibold uppercase flex items-center justify-center shadow-sm">
+        PROMO ESPECIAL DE INICIO DE AÑO · CUPOS LIMITADOS
+      </div>
+      <div className="absolute -left-32 top-10 h-48 w-48 bg-[#f2c27b]/40 blur-3xl rounded-full" />
+      <div className="absolute -right-24 bottom-10 h-56 w-56 bg-[#a3c78f]/30 blur-3xl rounded-full" />
+      <div className="container pt-16 md:pt-20 pb-12 md:pb-16 min-h-[80vh] flex items-center">
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center w-full">
+          <div className="order-2 lg:order-1 space-y-6 text-ink">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/80 border px-3 py-1 text-xs text-brand shadow-sm">
+              <Sparkles className="h-4 w-4" /> Año nuevo, energía amable
+            </div>
+            <div className="space-y-3">
+              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight font-[var(--font-heading)]">
+                RESET 2026 – Empieza el año sin regaños
+              </h1>
+              <p className="text-lg md:text-xl text-[hsl(var(--muted))] max-w-2xl">
+                Consulta 1:1 + plan de alimentación 30 días + recetario “Enero sin castigos” + checklist de hábitos + acompañamiento
+                1 mes por WhatsApp.
+              </p>
+            </div>
+            <ul className="space-y-2">
+              {bullets.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-base md:text-lg">
+                  <Check className="h-5 w-5 text-brand mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-sm md:text-base text-[hsl(var(--muted))] font-semibold">
+              Nutrición holística, inclusiva y sin culpas para cuerpos reales.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <Button
+                asChild
+                className="w-full sm:w-auto text-base"
+                onClick={() => onCTA("Agendar RESET 2026")}
+              >
+                <a href={BRAND.hero.cta.href}>Agendar consulta</a>
+              </Button>
+              <Button
+                variant="secondary"
+                asChild
+                className="w-full sm:w-auto text-base"
+                onClick={() => trackEvent("cta_whatsapp", { place: "reset-2026" })}
+              >
+                <a href={BRAND.whatsapp} className="flex items-center gap-2">
+                  <MessageCircle className="h-4 w-4" /> Escríbeme por WhatsApp
+                </a>
+              </Button>
+            </div>
+            <p className="text-[11px] md:text-xs uppercase tracking-[0.18em] text-[hsl(var(--muted))]">
+              +2,000 pacientes acompañados · Nutrición sin regaños
+            </p>
+          </div>
+
+          <div className="order-1 lg:order-2 relative">
+            <div className="absolute -right-3 -top-6 rounded-2xl bg-brand text-white px-4 py-3 shadow-2xl text-center w-[170px] rotate-2">
+              <div className="text-3xl font-black leading-none">649 MXN</div>
+              <div className="text-xs uppercase tracking-[0.16em] mt-1 opacity-90">precio individual</div>
+            </div>
+            <div className="rounded-3xl bg-white/85 border border-[#d6cbb0] shadow-xl p-5 md:p-7 space-y-4">
+              <figure className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-[#d6cbb0] shadow-inner bg-gradient-to-br from-[#f4e9d2] via-[#efd9ae] to-[#d6e7c3]">
+                <Image
+                  src="/reset-2026-placeholder.svg"
+                  alt="Formato en SVG para colocar la foto del servicio RESET 2026"
+                  width={1200}
+                  height={900}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-black/10 to-transparent" aria-hidden="true" />
+                <div className="absolute inset-0 flex items-center justify-center text-center px-4">
+                  <div className="inline-flex flex-col items-center gap-2 rounded-xl bg-white/85 px-4 py-3 text-sm text-ink shadow-sm">
+                    <span className="text-xs font-semibold tracking-wide text-brand">Espacio para foto de La NutriTía o del servicio</span>
+                    <span className="text-[11px] text-[hsl(var(--muted))]">Reemplaza “reset-2026-placeholder.svg” (o súbelo como PNG) en la carpeta public.</span>
+                  </div>
+                </div>
+                <figcaption className="sr-only">
+                  Reemplaza el archivo public/reset-2026-placeholder.svg con tu foto o servicio; si prefieres PNG, usa el mismo nombre.
+                </figcaption>
+              </figure>
+              <div className="text-center space-y-1">
+                <p className="text-base font-semibold text-ink">Paquete DÚO: 2 personas por 1,099 MXN</p>
+                <p className="text-xs text-[hsl(var(--muted))]">Válido pagando antes del 31 de diciembre</p>
+              </div>
+              <div className="rounded-2xl bg-soft border border-dashed border-[#d6cbb0] p-3 text-center text-sm text-ink">
+                <p className="font-semibold">Agenda hoy y asegura tu lugar</p>
+                <p className="text-[hsl(var(--muted))] text-xs mt-1">Promo ideal para arrancar 2026 con acompañamiento cercano.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function HeroPrimary({ onCTA }) {
@@ -697,6 +810,8 @@ export default function Page() {
       </header>
 
       <main>
+        <ResetBanner onCTA={handleCTA} />
+
         <section id="hero" className="relative overflow-hidden">
           <div className="absolute -top-20 -right-24 bg-[#c9c2a2]/50 h-64 w-64 rounded-full blur-3xl" />
           <div className="absolute -bottom-16 -left-24 bg-[#8f8c60]/30 h-64 w-64 rounded-full blur-3xl" />
