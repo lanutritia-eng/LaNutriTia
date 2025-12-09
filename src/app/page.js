@@ -152,6 +152,7 @@ function ResetBanner({ onCTA }) {
             <div className="rounded-3xl bg-white/85 border border-[#d6cbb0] shadow-xl p-5 md:p-7 space-y-4">
               <figure className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-[#d6cbb0] shadow-inner bg-gradient-to-br from-[#f4e9d2] via-[#efd9ae] to-[#d6e7c3]">
                 <Image
+                  src="/reset-2026-placeholder.svg"
                   src="/reset-2026-placeholder.png"
                   alt="Formato en SVG para colocar la foto del servicio RESET 2026"
                   width={1200}
