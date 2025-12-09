@@ -145,6 +145,21 @@ function ResetBanner({ onCTA }) {
           </div>
 
           <div className="order-1 lg:order-2 relative">
+            <div className="rounded-3xl bg-white/85 border border-[#d6cbb0] shadow-xl p-5 md:p-7 space-y-4">
+              <figure className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-[#d6cbb0] shadow-inner bg-gradient-to-br from-[#f4e9d2] via-[#efd9ae] to-[#d6e7c3]">
+                <div className="absolute -right-3 -top-4 rounded-2xl bg-brand text-white px-4 py-3 shadow-2xl text-center w-[170px] rotate-2 z-20">
+                  <div className="text-3xl font-black leading-none">649 MXN</div>
+                  <div className="text-xs uppercase tracking-[0.16em] mt-1 opacity-90">precio individual</div>
+                </div>
+                <Image
+                  src="/reset-2026-placeholder.svg"
+                  alt="Formato en SVG para colocar la foto del servicio RESET 2026"
+                  width={1200}
+                  height={900}
+                  className="w-full h-full object-cover relative z-10"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-black/10 to-transparent z-10" aria-hidden="true" />
             <div className="absolute -right-3 -top-6 rounded-2xl bg-brand text-white px-4 py-3 shadow-2xl text-center w-[170px] rotate-2">
               <div className="text-3xl font-black leading-none">649 MXN</div>
               <div className="text-xs uppercase tracking-[0.16em] mt-1 opacity-90">precio individual</div>

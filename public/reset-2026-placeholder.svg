@@ -23,6 +23,10 @@
   </g>
   <rect x="830" y="84" width="230" height="120" rx="20" fill="url(#accent)" opacity="0.9" />
   <text x="945" y="140" fill="#fff" text-anchor="middle" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="36" font-weight="800">RESET 2026</text>
+  <g fill="#ffffff" opacity="0.12">
+    <circle cx="620" cy="300" r="120" />
+    <circle cx="360" cy="520" r="100" />
+    <circle cx="860" cy="520" r="140" />
   <text x="945" y="176" fill="#fff7ec" text-anchor="middle" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="600">Espacio para foto</text>
   <g fill="#3c3523" text-anchor="middle" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif">
     <text x="600" y="470" font-size="38" font-weight="800">Coloca la foto de La NutriTía o del servicio</text>
