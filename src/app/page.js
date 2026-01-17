@@ -77,14 +77,14 @@ function HeroPrimary({ onCTA }) {
   return (
     <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
       <div className="space-y-6">
-        <div className="inline-flex items-center gap-2 rounded-full bg-white/80 border px-3 py-1 text-xs text-brand">
+        <div className="inline-flex items-center gap-2 rounded-full bg-surface border border-border px-3 py-1 text-xs font-semibold text-brand shadow-sm">
           <ShieldCheck className="h-4 w-4" /> Nutrición holística y sin culpas
         </div>
         <div className="space-y-3">
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight" id="contenido">
             {BRAND.hero.headline}
           </h1>
-          <p className="text-lg text-[hsl(var(--muted))] max-w-2xl">{BRAND.hero.subtitle}</p>
+          <p className="text-lg text-muted max-w-2xl">{BRAND.hero.subtitle}</p>
         </div>
         <ul className="space-y-3">
           {BRAND.hero.bullets.map((item) => (
@@ -103,40 +103,40 @@ function HeroPrimary({ onCTA }) {
             <a href="#servicios" className="flex items-center gap-2"><PlayCircle className="h-4 w-4" /> Ver cómo trabajo</a>
           </Button>
         </div>
-        <div className="flex flex-wrap items-center gap-4 text-sm text-[hsl(var(--muted))]">
+        <div className="flex flex-wrap items-center gap-4 text-sm text-muted">
           <div className="flex items-center gap-2"><Star className="h-4 w-4 text-brand" /> 4.9 ⭐️ reseñas verificadas</div>
           <div className="flex items-center gap-2"><ThumbsUp className="h-4 w-4 text-brand" /> +2,000 pacientes acompañados</div>
           <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-brand" /> Inclusivo con pacientes trans</div>
         </div>
       </div>
       <div className="relative">
-        <div className="absolute -top-10 -right-10 h-32 w-32 bg-[#c9c2a2]/60 blur-3xl rounded-full" />
-        <div className="relative rounded-3xl bg-white shadow-2xl border p-6 space-y-4">
-          <div className="rounded-2xl bg-gradient-to-br from-[#f4e9d2] via-[#c9c2a2] to-[#8f8c60] p-6 text-ink">
-            <p className="text-sm uppercase tracking-widest">Sobre mí</p>
+        <div className="absolute -top-10 -right-10 h-32 w-32 bg-brand/15 blur-3xl rounded-full" />
+        <div className="relative rounded-2xl bg-surface shadow-card border border-border p-6 space-y-4">
+          <div className="rounded-2xl bg-surface-muted border border-border/60 p-6 text-ink">
+            <p className="text-xs uppercase tracking-[0.3em] text-muted">Sobre mí</p>
             <h3 className="text-2xl font-bold mt-1">Marco · La Nutri Tía</h3>
-            <p className="text-sm text-[hsl(var(--muted))] mt-2">
+            <p className="text-sm text-muted mt-2">
               Nutriólogo clínico, divulgador y acompañante respetuoso. Trabajo con pacientes trans, salud hormonal, pérdida de grasa y bienestar sin dietas punitivas.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3">
             {["Resultados sostenibles con métricas claras", "Recetas accesibles y de la milpa", "Ajustes semanales", "Educación sin culpas"].map((item) => (
-              <div key={item} className="rounded-2xl border p-3 flex items-start gap-3 text-sm text-ink">
+              <div key={item} className="rounded-xl border border-border bg-surface p-3 flex items-start gap-3 text-sm text-ink">
                 <Sparkles className="h-4 w-4 text-brand mt-0.5" /> {item}
               </div>
             ))}
           </div>
-          <div className="flex flex-wrap gap-2 text-sm text-[hsl(var(--muted))]">
+          <div className="flex flex-wrap gap-2 text-sm text-muted">
             <a
               href={BRAND.whatsapp}
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-[#f4e9d2] text-ink"
+              className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-brand/10 text-ink"
               onClick={() => trackEvent("cta_whatsapp", { place: "hero-card" })}
             >
               <MessagesSquare className="h-4 w-4" /> Enviarme mensaje
             </a>
             <a
               href={`mailto:${BRAND.email}`}
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white border text-ink"
+              className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-surface border border-border text-ink"
             >
               <Mail className="h-4 w-4" /> Escríbeme por correo
             </a>
@@ -149,14 +149,14 @@ function HeroPrimary({ onCTA }) {
 
 function HeroAlternate({ onCTA }) {
   return (
-    <div className="relative overflow-hidden rounded-3xl border bg-gradient-to-r from-[#1f140f] to-[#f4e9d2] text-white">
+    <div className="relative overflow-hidden rounded-3xl border border-border bg-ink text-white">
       <div className="grid lg:grid-cols-2">
-        <div className="p-10 lg:p-14 bg-[#1f140f] text-surface">
+        <div className="p-10 lg:p-14 bg-ink text-surface">
           <p className="text-brand uppercase tracking-[0.2em] text-xs mb-4 flex items-center gap-2">
             <Sparkles className="h-4 w-4" /> Método sin culpas
           </p>
           <h1 className="text-5xl md:text-6xl font-black leading-tight font-[var(--font-heading)]">Come rico. Sana. Disfruta.</h1>
-          <p className="mt-4 text-lg text-[#f5eddc] max-w-xl">
+          <p className="mt-4 text-lg text-surface/80 max-w-xl">
             Planes clínicos con recetas ricas, menús anti-culpa y acompañamiento cercano. Ideal para pérdida de grasa, salud hormonal y pacientes trans.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
@@ -165,30 +165,30 @@ function HeroAlternate({ onCTA }) {
               <a href="#reseñas" className="flex items-center gap-2"><PlayCircle className="h-4 w-4" /> Ver reseñas</a>
             </Button>
           </div>
-          <div className="flex flex-wrap gap-4 mt-6 text-sm text-[#f5eddc]">
-            <div className="flex items-center gap-2"><Star className="h-4 w-4 text-[#facc15]" /> 4.9 ⭐️</div>
+          <div className="flex flex-wrap gap-4 mt-6 text-sm text-surface/80">
+            <div className="flex items-center gap-2"><Star className="h-4 w-4 text-accent" /> 4.9 ⭐️</div>
             <div className="flex items-center gap-2"><ThumbsUp className="h-4 w-4" /> +2,000 pacientes</div>
             <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4" /> Inclusivo</div>
           </div>
         </div>
-        <div className="p-10 lg:p-14 bg-[#f4e9d2] text-ink relative">
-          <div className="absolute right-8 top-8 text-6xl text-[#c6b78f] font-[var(--font-heading)]">Nourish</div>
+        <div className="p-10 lg:p-14 bg-surface-muted text-ink relative">
+          <div className="absolute right-8 top-8 text-6xl text-brand/20 font-[var(--font-heading)]">Nourish</div>
           <div className="relative z-10 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="p-3 rounded-2xl bg-white/80"><Wand2 className="h-6 w-6 text-brand" /></div>
+              <div className="p-3 rounded-2xl bg-surface"><Wand2 className="h-6 w-6 text-brand" /></div>
               <div>
                 <p className="font-semibold">Serif + ilustración lineal</p>
-                <p className="text-sm text-[hsl(var(--muted))]">Estilo editorial, cálido y profesional.</p>
+                <p className="text-sm text-muted">Estilo editorial, cálido y profesional.</p>
               </div>
             </div>
-            <div className="rounded-2xl border bg-white p-4 grid sm:grid-cols-2 gap-3">
+            <div className="rounded-2xl border border-border bg-surface p-4 grid sm:grid-cols-2 gap-3">
               {["Pacientes trans", "PCOS/tiroides", "Pérdida de grasa", "Recomp/hipertrofia"].map((tag) => (
                 <div key={tag} className="flex items-center gap-2 text-sm"><Check className="h-4 w-4 text-brand" /> {tag}</div>
               ))}
             </div>
-            <div className="rounded-2xl border border-dashed p-4 bg-white/60">
+            <div className="rounded-2xl border border-dashed border-border p-4 bg-surface/90">
               <p className="text-sm font-semibold">Agenda sin fricción</p>
-              <p className="text-sm text-[hsl(var(--muted))]">Calendario en vivo con Setmore y recordatorios automáticos.</p>
+              <p className="text-sm text-muted">Calendario en vivo con Setmore y recordatorios automáticos.</p>
             </div>
           </div>
         </div>
@@ -219,7 +219,7 @@ function Reviews({ onCTA }) {
         <div>
           <p className="text-brand uppercase tracking-[0.3em] text-xs">Reseñas</p>
           <h2 className="text-3xl md:text-5xl font-bold text-ink">Lo que dicen mis pacientes</h2>
-          <p className="text-[hsl(var(--muted))] mt-2">Opiniones verificadas en Setmore.</p>
+          <p className="text-muted mt-2">Opiniones verificadas en Setmore.</p>
         </div>
         <Button asChild onClick={() => onCTA("Agendar reseñas")}>
           <a href={BRAND.setmore}>Agendar ahora</a>
@@ -232,7 +232,7 @@ function Reviews({ onCTA }) {
           </CardHeader>
           <CardContent>
             {!failed ? (
-              <div className="rounded-2xl border bg-white shadow-sm overflow-hidden h-[520px]">
+              <div className="rounded-2xl border border-border bg-surface shadow-soft overflow-hidden h-[520px]">
                 <iframe
                   title="Reseñas de Setmore"
                   src={BRAND.setmoreReviews}
@@ -246,14 +246,14 @@ function Reviews({ onCTA }) {
             ) : (
               <div className="grid gap-3">
                 {fallbackCards.map((card) => (
-                  <div key={card.name} className="rounded-2xl border bg-white p-4 shadow-sm">
+                  <div key={card.name} className="rounded-2xl border border-border bg-surface p-4 shadow-soft">
                     <div className="flex items-center gap-2 text-amber-500">
                       {[1, 2, 3, 4, 5].map((s) => (
                         <Star key={s} className="h-4 w-4 fill-amber-400 text-amber-400" />
                       ))}
                     </div>
                     <p className="mt-2 text-sm text-ink">“{card.text}”</p>
-                    <p className="mt-1 text-xs text-[hsl(var(--muted))]">{card.name}</p>
+                    <p className="mt-1 text-xs text-muted">{card.name}</p>
                   </div>
                 ))}
                 <a className="text-sm text-brand underline" href={BRAND.setmoreReviews} target="_blank" rel="noreferrer">
@@ -292,24 +292,24 @@ function Comparison({ onCTA }) {
       <div className="text-center mb-10">
         <p className="text-brand uppercase tracking-[0.3em] text-xs">Consultas y membresías</p>
         <h2 className="text-3xl md:text-5xl font-bold text-ink">Elige tu nivel de acompañamiento</h2>
-        <p className="text-[hsl(var(--muted))] mt-3">Todos los planes llevan al flujo correcto (Patreon o Setmore).</p>
+        <p className="text-muted mt-3">Todos los planes llevan al flujo correcto (Patreon o Setmore).</p>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full text-left text-sm">
           <thead>
-            <tr className="text-[hsl(var(--muted))]">
+            <tr className="text-muted">
               <th className="py-3"></th>
               {tiers.map((tier) => (
                 <th key={tier.name} className="py-3 px-4 text-center">
-                  <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full ${tier.name === "Pro" ? "bg-brand text-white" : "bg-white border"}`}>
-                    {tier.name === "Pro" && <Badge className="bg-white/20 text-white">Recomendada</Badge>}
+                  <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full ${tier.name === "Pro" ? "bg-brand text-white" : "bg-surface border border-border"}`}>
+                    {tier.name === "Pro" && <Badge className="bg-surface/20 text-white">Recomendada</Badge>}
                     <span className="font-semibold">{tier.name}</span>
                   </div>
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#e6dcc3]">
+          <tbody className="divide-y divide-border">
             <tr>
               <td className="py-4 font-semibold">Precio mensual</td>
               {tiers.map((tier) => (
@@ -318,7 +318,7 @@ function Comparison({ onCTA }) {
             </tr>
             {tiers[0]?.features.map((_, idx) => (
               <tr key={idx}>
-                <td className="py-3 text-[hsl(var(--muted))]">Beneficio {idx + 1}</td>
+                <td className="py-3 text-muted">Beneficio {idx + 1}</td>
                 {tiers.map((tier) => (
                   <td key={tier.name} className="py-3 px-4 text-center">
                     <div className="inline-flex items-center gap-2">
@@ -364,15 +364,15 @@ function HowItWorks({ onCTA }) {
         <h2 className="text-3xl md:text-5xl font-bold text-ink">Tu camino en 3 pasos</h2>
       </div>
       <div className="relative">
-        <div className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9c2a2] to-transparent" />
+        <div className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
         <div className="grid md:grid-cols-3 gap-6">
           {steps.map((step, idx) => (
             <div key={step.title} className="card relative">
               <CardHeader className="flex items-center gap-3">
-                <div className="p-3 rounded-2xl bg-[#f4e9d2]"><step.icon className="h-6 w-6 text-brand" /></div>
+                <div className="p-3 rounded-2xl bg-brand/10"><step.icon className="h-6 w-6 text-brand" /></div>
                 <CardTitle className="text-xl">{idx + 1}. {step.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-[hsl(var(--muted))]">{step.desc}</CardContent>
+              <CardContent className="text-sm text-muted">{step.desc}</CardContent>
             </div>
           ))}
         </div>
@@ -405,7 +405,7 @@ function ForWhom() {
               <Link
                 key={chip.label}
                 href={chip.href}
-                className="px-4 py-2 rounded-full border bg-white text-sm hover:border-brand"
+                className="px-4 py-2 rounded-full border border-border bg-surface text-sm hover:border-brand"
               >
                 {chip.label}
               </Link>
@@ -449,14 +449,14 @@ function LeadMagnet() {
 
   return (
     <section className="container py-16 md:py-20">
-      <div className="card bg-gradient-to-r from-[#f4e9d2] to-[#e6dcc3]">
+      <div className="card bg-gradient-to-r from-surface to-surface-muted">
         <CardHeader>
           <CardTitle className="text-4xl font-extrabold">Guías gratuitas</CardTitle>
         </CardHeader>
         <CardContent>
           <form className="grid md:grid-cols-[1.5fr_1fr] gap-4 items-center" onSubmit={submit}>
             <div className="space-y-3">
-              <p className="text-[hsl(var(--muted))]">Descarga la guía de café sin culpa, plato ideal, ayuno consciente o cuidados para pacientes trans y VIH.</p>
+              <p className="text-muted">Descarga la guía de café sin culpa, plato ideal, ayuno consciente o cuidados para pacientes trans y VIH.</p>
               <input type="text" name="hp" className="hidden" tabIndex="-1" autoComplete="off" />
               <Input
                 type="email"
@@ -485,7 +485,7 @@ function LeadMagnet() {
               <Button type="submit" fullWidth disabled={status === "loading"}>
                 {status === "loading" ? "Enviando..." : "Recibir guía"}
               </Button>
-              <p className="text-xs text-[hsl(var(--muted))]">Te enviaré el PDF y tips semanales. Sin spam.</p>
+              <p className="text-xs text-muted">Te enviaré el PDF y tips semanales. Sin spam.</p>
             </div>
           </form>
         </CardContent>
@@ -552,7 +552,7 @@ function ContactSection() {
               <Button type="submit" className="w-full" disabled={status === "loading"}>
                 {status === "loading" ? "Enviando..." : "Enviar"}
               </Button>
-              <p className="text-xs text-slate-600">O escríbeme directo a <a href={`mailto:${BRAND.email}`} className="underline">{BRAND.email}</a></p>
+              <p className="text-xs text-muted">O escríbeme directo a <a href={`mailto:${BRAND.email}`} className="underline">{BRAND.email}</a></p>
             </form>
           </CardContent>
         </div>
@@ -580,18 +580,18 @@ function ContactSection() {
               <Calendar className="h-5 w-5 text-brand" />
               <div>
                 <p className="text-sm font-semibold leading-tight">Horarios</p>
-                <p className="text-sm text-slate-600">Lun–Vie 9:00–18:00 (CDMX). Sáb 10:00–14:00.</p>
+                <p className="text-sm text-muted">Lun–Vie 9:00–18:00 (CDMX). Sáb 10:00–14:00.</p>
               </div>
             </CardContent>
           </div>
         </div>
       </div>
-      <div className="card border-[#c9c2a2] bg-[#f4e9d2] mt-6">
+      <div className="card border-border bg-surface-muted mt-6">
         <CardContent className="p-6 text-sm text-ink flex items-start gap-2">
           <Info className="h-4 w-4 mt-0.5" />
           <div>
             <p className="font-semibold">Aviso importante</p>
-            <p className="text-[hsl(var(--muted))] mt-1">La información proporcionada no sustituye la valoración médica. Si presentas una condición clínica específica, consulta a tu médico tratante.</p>
+            <p className="text-muted mt-1">La información proporcionada no sustituye la valoración médica. Si presentas una condición clínica específica, consulta a tu médico tratante.</p>
           </div>
         </CardContent>
       </div>
@@ -668,10 +668,10 @@ export default function Page() {
         })}
       </Script>
 
-      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/70 border-b">
+      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-surface/80 bg-surface/90 border-b border-border shadow-sm">
         <div className="container h-16 flex items-center justify-between">
           <a href="/" className="inline-flex items-center gap-2">
-            <img src="/logo.png" alt="La Nutri Tía" className="h-10 w-10 rounded-full border object-cover" />
+            <img src="/logo.png" alt="La Nutri Tía" className="h-10 w-10 rounded-full border border-border object-cover" />
             <span className="sr-only">La Nutri Tía</span>
           </a>
           <nav className="hidden md:flex items-center gap-4 text-sm">
@@ -679,7 +679,7 @@ export default function Page() {
               <a
                 key={section.id}
                 href={`#${section.id}`}
-                className={`px-3 py-2 rounded-full transition-colors ${activeSection === section.id ? "bg-[#f4e9d2] text-brand" : "hover:text-brand"}`}
+                className={`px-3 py-2 rounded-full transition-colors ${activeSection === section.id ? "bg-surface-muted text-brand" : "hover:text-brand"}`}
               >
                 {section.label}
               </a>
@@ -698,18 +698,18 @@ export default function Page() {
 
       <main>
         <section id="hero" className="relative overflow-hidden">
-          <div className="absolute -top-20 -right-24 bg-[#c9c2a2]/50 h-64 w-64 rounded-full blur-3xl" />
-          <div className="absolute -bottom-16 -left-24 bg-[#8f8c60]/30 h-64 w-64 rounded-full blur-3xl" />
+          <div className="absolute -top-20 -right-24 bg-brand/15 h-64 w-64 rounded-full blur-3xl" />
+          <div className="absolute -bottom-16 -left-24 bg-accent/20 h-64 w-64 rounded-full blur-3xl" />
           <div className="container py-16 md:py-24">
             {useAltHero ? <HeroAlternate onCTA={handleCTA} /> : <HeroPrimary onCTA={handleCTA} />}
           </div>
         </section>
 
         <section className="container pb-12">
-          <div className="rounded-3xl border bg-white/80 shadow-sm p-4 md:p-6">
+          <div className="rounded-2xl border border-border bg-surface shadow-soft p-4 md:p-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {heroImages.map((src, idx) => (
-                <div key={idx} className="rounded-2xl border bg-white overflow-hidden shadow-sm">
+                <div key={idx} className="rounded-2xl border border-border bg-surface overflow-hidden shadow-sm">
                   <img src={src} alt={`Galería hero ${idx + 1}`} className="w-full h-full object-cover aspect-square" loading="lazy" />
                 </div>
               ))}
@@ -724,7 +724,7 @@ export default function Page() {
             {stats.map((stat) => (
               <div key={stat.label} className="space-y-2">
                 <div className="text-4xl md:text-5xl font-extrabold tracking-tight">{stat.value}</div>
-                <div className="text-[hsl(var(--muted))]">{stat.label}</div>
+                <div className="text-muted">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -736,19 +736,19 @@ export default function Page() {
           <div className="text-center mb-10">
             <p className="text-brand uppercase tracking-[0.3em] text-xs">Servicios</p>
             <h2 className="text-3xl md:text-5xl font-bold text-ink">¿Qué hacemos juntos?</h2>
-            <p className="text-[hsl(var(--muted))] mt-3">Planes personalizados, enfoque holístico y acompañamiento real.</p>
+            <p className="text-muted mt-3">Planes personalizados, enfoque holístico y acompañamiento real.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((service) => (
               <div key={service.title} className="card">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <div className="p-3 rounded-2xl bg-[#f4e9d2]"><service.Icon className="h-6 w-6 text-brand" /></div>
+                    <div className="p-3 rounded-2xl bg-brand/10"><service.Icon className="h-6 w-6 text-brand" /></div>
                     <CardTitle className="text-lg">{service.title}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[hsl(var(--muted))] text-sm leading-relaxed">{service.desc}</p>
+                  <p className="text-muted text-sm leading-relaxed">{service.desc}</p>
                 </CardContent>
               </div>
             ))}
@@ -760,18 +760,18 @@ export default function Page() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-3">
                 <h2 className="text-2xl font-bold text-ink">Acompañamiento realista</h2>
-                <p className="text-slate-600">Sin dietas extremas ni regaños: te llevo paso a paso con menús claros, recetas fáciles y un seguimiento que se ajusta a tu ritmo.</p>
+                <p className="text-muted">Sin dietas extremas ni regaños: te llevo paso a paso con menús claros, recetas fáciles y un seguimiento que se ajusta a tu ritmo.</p>
                 <div className="grid sm:grid-cols-2 gap-3 text-sm text-ink">
                   {["Menú de 5 tiempos con equivalentes", "Opciones económicas y de la milpa", "Material descargable y guías rápidas", "Mensajes y ajustes semanales"].map((item) => (
-                    <div key={item} className="rounded-2xl border bg-white p-4 flex items-start gap-3">
+                    <div key={item} className="rounded-2xl border border-border bg-surface p-4 flex items-start gap-3">
                       <Check className="h-4 w-4 text-brand mt-0.5" /> {item}
                     </div>
                   ))}
                 </div>
-                <div className="mt-2 text-sm text-[hsl(var(--muted))]">Ideal para pérdida de grasa, recomposición, salud hormonal y pacientes trans.</div>
+                <div className="mt-2 text-sm text-muted">Ideal para pérdida de grasa, recomposición, salud hormonal y pacientes trans.</div>
               </div>
               <div className="space-y-4">
-                <div className="rounded-2xl border bg-white p-5 shadow-sm">
+                <div className="rounded-2xl border border-border bg-surface p-5 shadow-soft">
                   <p className="text-xs uppercase tracking-widest text-brand">Convéncete en 3 pasos</p>
                   <ul className="mt-3 space-y-2 text-sm text-ink">
                     <li className="flex items-start gap-3"><Flame className="h-4 w-4 text-brand mt-0.5" /> Revisión de hábitos, tiempos y métricas clave.</li>
@@ -801,9 +801,9 @@ export default function Page() {
             <div className="card">
               <CardHeader><CardTitle className="flex items-center gap-2"><Calendar className="h-5 w-5 text-brand" /> Agenda en Setmore</CardTitle></CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-sm text-slate-600">Reserva directa: <a className="text-brand underline" href={BRAND.setmore} target="_blank" rel="noreferrer">{BRAND.setmore}</a></p>
+                <p className="text-sm text-muted">Reserva directa: <a className="text-brand underline" href={BRAND.setmore} target="_blank" rel="noreferrer">{BRAND.setmore}</a></p>
                 <SetmoreEmbed href={BRAND.setmore} />
-                <p className="text-xs text-[hsl(var(--muted))]">El iframe se carga en lazy-load para evitar CLS.</p>
+                <p className="text-xs text-muted">El iframe se carga en lazy-load para evitar CLS.</p>
               </CardContent>
             </div>
 
@@ -818,7 +818,7 @@ export default function Page() {
                   <Input placeholder="WhatsApp (opcional)" aria-label="WhatsApp" />
                   <Textarea placeholder="¿Cuál es tu objetivo?" rows={5} aria-label="Objetivo" />
                   <Button type="submit" className="w-full" onClick={() => handleCTA("Enviar contacto agenda")}>Enviar</Button>
-                  <p className="text-xs text-slate-600">O escríbenos directo a <a href={`mailto:${BRAND.email}`} className="underline">{BRAND.email}</a></p>
+                  <p className="text-xs text-muted">O escríbenos directo a <a href={`mailto:${BRAND.email}`} className="underline">{BRAND.email}</a></p>
                 </form>
               </CardContent>
             </div>
@@ -839,7 +839,7 @@ export default function Page() {
             ].map((f) => (
               <div key={f.q} className="card">
                 <CardHeader><CardTitle className="text-base">{f.q}</CardTitle></CardHeader>
-                <CardContent className="text-sm text-slate-600">{f.a}</CardContent>
+                <CardContent className="text-sm text-muted">{f.a}</CardContent>
               </div>
             ))}
           </div>
@@ -848,14 +848,14 @@ export default function Page() {
         <ContactSection />
       </main>
 
-      <footer className="border-t bg-white">
+      <footer className="border-t border-border bg-surface">
         <div className="container py-12 grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <a href="/" className="inline-flex items-center gap-2">
-              <img src="/logo.png" alt="La Nutri Tía" className="h-10 w-10 rounded-full border object-cover" />
+              <img src="/logo.png" alt="La Nutri Tía" className="h-10 w-10 rounded-full border border-border object-cover" />
               <span className="sr-only">La Nutri Tía</span>
             </a>
-            <p className="mt-3 text-sm text-slate-600 max-w-md">Nutrición holística, sin culpas y con resultados reales. Planes personalizados, recetarios y una comunidad que te acompaña.</p>
+            <p className="mt-3 text-sm text-muted max-w-md">Nutrición holística, sin culpas y con resultados reales. Planes personalizados, recetarios y una comunidad que te acompaña.</p>
           </div>
           <div>
             <p className="text-sm font-semibold">Enlaces</p>
@@ -874,8 +874,8 @@ export default function Page() {
             </ul>
           </div>
         </div>
-        <div className="border-t">
-          <div className="container py-6 text-xs text-slate-600 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="border-t border-border">
+          <div className="container py-6 text-xs text-muted flex flex-col md:flex-row items-center justify-between gap-3">
             <p>© {new Date().getFullYear()} La Nutri Tía. Todos los derechos reservados.</p>
             <div className="flex items-center gap-3">
               <a href={BRAND.instagram} className="hover:underline">Instagram</a>
@@ -885,7 +885,7 @@ export default function Page() {
       </footer>
 
       <div className="fixed bottom-4 inset-x-0 px-4 md:hidden">
-        <div className="rounded-2xl shadow-lg bg-white border flex items-center gap-3 p-3">
+        <div className="rounded-2xl shadow-lg bg-surface border border-border flex items-center gap-3 p-3">
           <Button fullWidth onClick={() => handleCTA("Agendar bottom bar")} asChild>
             <a href={BRAND.hero.cta.href} className="flex items-center gap-2"><Calendar className="h-4 w-4" /> Agendar</a>
           </Button>

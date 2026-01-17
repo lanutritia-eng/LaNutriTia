@@ -1,41 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-gradient-to-b from-[#f4e9d2] via-[#efe2c3] to-[#f4e9d2];
-  color: hsl(var(--ink));
+  @apply bg-surface-muted text-ink antialiased;
   font-family: var(--font-body);
 }
 .container {
-  @apply w-full max-w-7xl mx-auto px-4 md:px-8;
+  @apply w-full max-w-[1160px] mx-auto px-4 md:px-8;
 }
 .card {
-  @apply rounded-2xl border border-[#c9c2a2]/50 bg-white shadow-sm;
+  @apply rounded-xl border border-border bg-surface shadow-soft;
 }
 .btn {
-  @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold border transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
 }
 .btn-primary {
-  @apply bg-brand text-white border-brand hover:bg-brand/90;
+  @apply bg-brand text-white border-brand hover:bg-brand-dark hover:border-brand-dark shadow-sm;
 }
 .btn-secondary {
-  @apply bg-white text-ink border-[#d6cbb0] hover:bg-[#f5eddb];
+  @apply bg-surface text-ink border-border hover:border-brand/40 hover:text-brand;
 }
 .btn-ghost {
-  @apply bg-transparent text-ink border-transparent hover:bg-white/60;
+  @apply bg-transparent text-ink border-transparent hover:bg-surface-muted;
 }
 .btn-full {
   @apply w-full;
 }
 .badge {
-  @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold;
+  @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold tracking-wide;
 }
 .input {
-  @apply w-full rounded-xl border border-[#d6cbb0] bg-white px-3 py-2 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+  @apply w-full rounded-lg border border-border bg-surface px-3 py-2.5 text-sm text-ink shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
 }
 .textarea {
-  @apply w-full rounded-xl border border-[#d6cbb0] bg-white px-3 py-2 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+  @apply w-full rounded-lg border border-border bg-surface px-3 py-2.5 text-sm text-ink shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
 }
 footer a:hover { text-decoration: underline; }
 .whatsapp-fab {
@@ -45,20 +46,26 @@ footer a:hover { text-decoration: underline; }
 
 @layer base {
 :root {
-  --radius: 0.875rem;
-  --brand: 40 36% 26%;
-  --brand-2: 56 20% 47%;
-  --surface: 41 61% 89%;
-  --surface-strong: 49 27% 71%;
-  --ink: 41 38% 17%;
-  --muted: 49 20% 38%;
-  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --font-heading: "Playfair Display", "Georgia", serif;
+  --radius-sm: 0.5rem;
+  --radius: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --brand: 94 20% 28%;
+  --brand-dark: 94 24% 22%;
+  --accent: 30 58% 46%;
+  --surface: 38 44% 96%;
+  --surface-muted: 36 38% 92%;
+  --ink: 28 24% 18%;
+  --muted: 30 12% 38%;
+  --border: 32 22% 84%;
+  --shadow: 24 18% 18%;
+  --font-body: "Manrope", "Inter", system-ui, -apple-system, sans-serif;
+  --font-heading: "Manrope", "Inter", system-ui, -apple-system, sans-serif;
 }
 }
 
 /* utilidades rápidas */
-.bg-soft { background-color: hsl(var(--surface)); }
+.bg-soft { background-color: hsl(var(--surface-muted)); }
 .text-ink { color: hsl(var(--ink)); }
 
 h1, h2, h3, h4, h5, h6 {
@@ -67,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a.skip-link {
-  @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg;
+  @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-surface focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-soft;
   color: hsl(var(--ink));
 }
 
@@ -76,5 +83,5 @@ a.skip-link {
 }
 
 .placeholder-skeleton {
-  @apply animate-pulse bg-[#e6dcc3] rounded-2xl;
+  @apply animate-pulse bg-surface-muted rounded-xl;
 }
