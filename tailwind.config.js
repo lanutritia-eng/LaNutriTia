@@ -8,6 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        cacao: "hsl(var(--cacao))",
+        cafe: "hsl(var(--cafe))",
+        nacar: "hsl(var(--nacar))",
+        naranja: "hsl(var(--naranja))",
+        hoja: "hsl(var(--hoja))",
+        salvia: "hsl(var(--salvia))",
+        tinta: "hsl(var(--tinta))",
         brand: "hsl(var(--brand))",
         "brand-dark": "hsl(var(--brand-dark))",
         accent: "hsl(var(--accent))",
