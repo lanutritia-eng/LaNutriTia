@@ -16,18 +16,15 @@ export const BRAND = {
   colors: {
     primary: "#7a4df3",
   },
-  hero: {
-    headline: "Acompañamiento personalizado que sí cabe en tu vida",
-    subtitle:
-      "Planes realistas, recetas ricas y seguimiento cercano para que bajes grasa, cuides tu salud hormonal y disfrutes comer sin culpa.",
-    bullets: [
-      "Planes hechos a medida con esferas por color",
-      "Seguimiento semanal con ajustes claros",
-      "Recetas económicas, de la milpa y sin culpas",
-    ],
-    cta: { label: "Agendar ahora", href: "https://marcogalindo.setmore.com/" },
-  },
   heroImages: ["/hero/1.png", "/hero/2.png", "/hero/3.png", "/hero/4.png"],
+  hero: {
+    ...{
+      headline: "Menos regaños, más resultados.",
+      subtitle: "Planes de nutrición realistas, ricos y sostenibles para bajar grasa, cuidar tu salud hormonal y volver a disfrutar la comida sin culpa.",
+      cta: { label: "Agendar consulta", href: "https://marcogalindo.setmore.com/" },
+    },
+    images: ["/hero/1.png", "/hero/2.png", "/hero/3.png", "/hero/4.png"],
+  },
   featureFlags: {
     altHero: false,
   },
@@ -60,29 +57,33 @@ export const BRAND = {
       },
     ],
   },
-  instagramEmbeds: ["https://www.instagram.com/p/DQsrp-BDE8f/"],
+  instagramEmbeds: [
+    "https://www.instagram.com/p/DQsrp-BDE8f/",
+    "https://www.instagram.com/p/DQaqDghDO1_/",
+    "https://www.instagram.com/p/DPVGGGWDJJX/",
+  ],
   instagramFeedIframeSrc: "",
   posts: [
     {
       title: "Ayuno: lo bueno y lo malo",
-      date: "2025-11-25",
+      date: "2025",
       url: "https://www.patreon.com/posts/ayuno-lo-bueno-y-142436828",
       tags: ["ayuno", "educación"],
     },
     {
-      title: "Cómo construir tu plato ideal (fácil)",
-      date: "2025-11-22",
+      title: "Cómo construir tu plato ideal",
+      date: "2025",
       url: "https://www.patreon.com/posts/como-construir-138143987",
-      tags: ["guías", "milpa"],
+      tags: ["guía", "hábitos"],
     },
     {
-      title: "Proteína: el macronutriente que más te ayuda",
-      date: "2025-11-18",
+      title: "La proteína: el macronutriente que más te ayuda",
+      date: "2025",
       url: "https://www.patreon.com/posts/la-proteina-el-y-136889386",
-      tags: ["proteína", "recomp"],
+      tags: ["proteína", "recomposición"],
     },
-    { title: "Pronto: Artículo #4", date: "—", url: "https://patreon.com/LaNutriTia", tags: ["pronto"] },
-    { title: "Pronto: Artículo #5", date: "—", url: "https://patreon.com/LaNutriTia", tags: ["pronto"] },
-    { title: "Pronto: Artículo #6", date: "—", url: "https://patreon.com/LaNutriTia", tags: ["pronto"] },
+    { title: "Próximamente: guía de compras inteligentes", date: "Pronto", url: "https://patreon.com/LaNutriTia", tags: ["pronto"] },
+    { title: "Próximamente: snacks sin culpa", date: "Pronto", url: "https://patreon.com/LaNutriTia", tags: ["pronto"] },
+    { title: "Próximamente: cómo organizar tus comidas", date: "Pronto", url: "https://patreon.com/LaNutriTia", tags: ["pronto"] },
   ],
 };
